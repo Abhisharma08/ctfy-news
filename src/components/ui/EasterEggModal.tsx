@@ -62,27 +62,27 @@ export function EasterEggModal({ trigger, className }: EasterEggModalProps = {})
           type="button"
           className={
             className ||
-            "inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-[#DDB65E] bg-[#111C30] hover:bg-[#1B2A43] border border-[#DDB65E]/30 rounded-md transition-all duration-200 cursor-pointer shadow-sm hover:border-[#DDB65E]"
+            "inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-[#DDB65E] bg-[#111C30] hover:bg-[#1B2A43] border border-[#DDB65E]/40 rounded-md transition-all duration-200 cursor-pointer shadow-sm hover:border-[#DDB65E] font-bold"
           }
-          title="Classified: Boss's Secret Tracker"
+          title="Classified: Boss's Updated Tracker"
         >
           <FileSpreadsheet className="w-3.5 h-3.5 text-[#DDB65E]" />
-          <span>SECRET_TRACKER.XLSX</span>
+          <span>UPDATED_TRACKER.XLSX</span>
         </button>
       )}
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative w-full max-w-2xl bg-[#0F172A] border border-[#DDB65E]/40 rounded-2xl shadow-[0_0_50px_rgba(221,182,94,0.2)] overflow-hidden">
+          <div className="relative w-full max-w-2xl bg-[#0F172A] border-2 border-[#DDB65E]/60 rounded-2xl shadow-[0_0_50px_rgba(221,182,94,0.3)] overflow-hidden">
             {/* Window Top Bar */}
-            <div className="flex items-center justify-between px-4 py-3 bg-[#111C30] border-b border-[#DDB65E]/20">
+            <div className="flex items-center justify-between px-4 py-3 bg-[#111C30] border-b border-[#DDB65E]/30">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-green-500/80 inline-block" />
-                <span className="ml-2 text-xs font-mono text-[#A5B0C2] flex items-center gap-1.5">
+                <span className="ml-2 text-xs font-mono text-[#DDB65E] font-bold flex items-center gap-1.5">
                   <Table className="w-3.5 h-3.5 text-[#DDB65E]" />
-                  CONFIDENTIAL_BOSS_KPI_TRACKER_V99.SHEETS
+                  UPDATED TRACKER // CONFIDENTIAL_BOSS_KPI_TRACKER_V99.SHEETS
                 </span>
               </div>
               <button
@@ -97,7 +97,7 @@ export function EasterEggModal({ trigger, className }: EasterEggModalProps = {})
             <div className="flex items-center gap-3 px-4 py-2 bg-[#1B2A43]/50 border-b border-[#DDB65E]/10 text-xs font-mono">
               <span className="text-[#DDB65E] font-bold">fx</span>
               <span className="text-[#F5F1E8] truncate">
-                =IF(BOSS_BIRTHDAY=TRUE, CELEBRATE(FOREVER), CONTINUE_WORK())
+                =IF(BOSS_ASKS="DID YOU UPDATE THE TRACKER?", "YES BOSS, 100% UPDATED!", "UPDATING RIGHT NOW...")
               </span>
             </div>
 

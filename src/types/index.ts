@@ -27,6 +27,8 @@ export interface Feature {
   skillType: "Passive" | "Active" | "Ultimate" | "Defense" | "Aura";
   manaCost: string;
   cooldown: string;
+  isHighlighted?: boolean;
+  highlightBadge?: string;
 }
 
 export interface Award {

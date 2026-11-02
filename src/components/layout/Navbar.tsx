@@ -253,10 +253,10 @@ export function Navbar() {
                 >
                   <div className="flex items-center gap-2.5">
                     <FileSpreadsheet className="w-4 h-4 text-[#DDB65E]" />
-                    <span>CONFIDENTIAL_BOSS_TRACKER.XLSX</span>
+                    <span>UPDATED_TRACKER.XLSX</span>
                   </div>
-                  <span className="px-2 py-0.5 rounded bg-[#DDB65E]/20 text-[9px] font-mono font-semibold">
-                    EASTER EGG
+                  <span className="px-2 py-0.5 rounded bg-[#DDB65E]/20 text-[9px] font-mono font-bold text-[#DDB65E]">
+                    MAIN PART
                   </span>
                 </button>
               )}

@@ -8,7 +8,7 @@ export const featuresData: Feature[] = [
   {
     id: 1,
     number: "01",
-    title: "TRACKER 360°",
+    title: "UPDATED TRACKER",
     mode: "Always ON",
     tagline: "The ability to track absolutely EVERYTHING.",
     quote:
@@ -22,6 +22,8 @@ export const featuresData: Feature[] = [
     skillType: "Passive",
     manaCost: "0 MP (Always Active)",
     cooldown: "Instant",
+    isHighlighted: true,
+    highlightBadge: "★ MAIN PART // SACRED WORKPLACE TRACKER ★",
   },
   {
     id: 2,
