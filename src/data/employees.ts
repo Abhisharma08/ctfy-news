@@ -107,4 +107,11 @@ export const employeesData: Employee[] = [
     birthdayMessage:
       "Happy Birthday, Sir! ❤️\n\nI just want to take a moment to thank you for being more than just a boss. Working with you has taught me a lot, not just about work but also about learning, growing and believing in myself.\n\nI really appreciate how you always push me to try new things, take on challenges and do things that sometimes I don't even think I'm capable of.\n\nYour guidance and encouragement have made a real difference in my journey, and I'm genuinely grateful for everything I've learned from you.",
   },
+  {
+    id: 15,
+    name: "Dipankar",
+    image: "/images/employees/dipankar.png",
+    birthdayMessage:
+      "Happy Birthday, Sir! You have always supported us, understood us, and stood by us. You have never made us feel like we have a boss, but rather someone we can always look up to, learn from, and count on. Truly grateful to have a mentor like you. Wishing you lots of happiness!",
+  },
 ];
