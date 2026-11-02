@@ -43,7 +43,7 @@ export const employeesData: Employee[] = [
   {
     id: 5,
     name: "Somasree",
-    designation: "The Creative Minion",
+    designation: "ONLY  Ai explorer designer Minion",
     image: "/images/employees/somashree.png",
     birthdayMessage:
       "Thank you sir for always encouraging us to explore AI, try new things, and think creatively. You're making sure we stay updated and don't get replaced by AI anytime soon! Happy Birthday",
@@ -146,7 +146,7 @@ export const employeesData: Employee[] = [
   {
     id: 17,
     name: "Shivam",
-    designation: "The Oldest Minion",
+    designation: "The Favourite Minion",
     image: "/images/employees/shivam.png",
     funnyMessage: "Sir काम है या कोयले की खान\nजितना खोदते जा रहे है। उतना ही बढ़ते जा रहा है।।",
     birthdayMessage: "Happy Birthday Superboss",
@@ -177,6 +177,7 @@ export const employeesData: Employee[] = [
   {
     id: 21,
     name: "Abhimanyu",
+    designation: "The SS Level Techy Minion",
     image: "/images/employees/abhimanyu.png",
     birthdayMessage:
       "Happy Birthday, Sir! 🎉 Wishing you a fantastic year ahead filled with happiness, good health and lots of success. Have a great day!",
