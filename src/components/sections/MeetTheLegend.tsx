@@ -3,7 +3,8 @@ import { Section } from "@/components/layout/Section";
 import { StatCard } from "@/components/cards/StatCard";
 import { bossData } from "@/data/boss";
 import { Reveal } from "@/components/ui/Reveal";
-import { CheckCircle2, Sparkles, Terminal } from "lucide-react";
+import { CheckCircle2, Terminal } from "lucide-react";
+import { MobileGamingSlider } from "@/components/game/MobileGamingSlider";
 
 export function MeetTheLegend() {
   return (
@@ -13,7 +14,7 @@ export function MeetTheLegend() {
       title={bossData.legendHeading}
       subtitle={bossData.legendSubheadline}
     >
-      <div className="space-y-12">
+      <div className="space-y-10 sm:space-y-12">
         {/* Narrative & Cheat Code Box */}
         <Reveal direction="up" delay={0.1}>
           <div className="max-w-4xl mx-auto rounded-3xl p-6 sm:p-10 bg-gradient-to-br from-[#1B2A43]/80 via-[#111C30]/90 to-[#0B1220] border border-[#DDB65E]/30 shadow-2xl">
@@ -50,14 +51,18 @@ export function MeetTheLegend() {
           </div>
         </Reveal>
 
-        {/* 4 Stat Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-2">
+        {/* 4 Stat Cards with Mobile Gaming Slider */}
+        <MobileGamingSlider
+          instruction="SWIPE TO INSPECT COMBAT STATS"
+          counterPrefix="STAT"
+          desktopGridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-2"
+        >
           {bossData.stats.map((stat, idx) => (
             <Reveal key={stat.id} direction="up" delay={0.1 * (idx + 1)}>
               <StatCard stat={stat} />
             </Reveal>
           ))}
-        </div>
+        </MobileGamingSlider>
       </div>
     </Section>
   );

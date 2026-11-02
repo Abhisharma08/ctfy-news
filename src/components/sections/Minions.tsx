@@ -6,7 +6,8 @@ import { EmployeeCard } from "@/components/cards/EmployeeCard";
 import { employeesData } from "@/data/employees";
 import { Reveal } from "@/components/ui/Reveal";
 import { sounds } from "@/lib/sounds";
-import { Users, Filter, Sparkles, Heart } from "lucide-react";
+import { Users, Filter, Sparkles } from "lucide-react";
+import { MobileGamingSlider } from "@/components/game/MobileGamingSlider";
 
 export function Minions() {
   const [selectedRole, setSelectedRole] = useState<string>("ALL");
@@ -42,7 +43,7 @@ export function Minions() {
       </Reveal>
 
       {/* Role Filter Tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+      <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
         <div className="flex items-center gap-1.5 px-3 py-1 text-xs font-mono text-[#DDB65E] mr-1 hidden sm:flex">
           <Filter className="w-3.5 h-3.5" />
           <span>FILTER BY CLASS:</span>
@@ -63,8 +64,13 @@ export function Minions() {
         ))}
       </div>
 
-      {/* Grid of Party Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
+      {/* Gaming Mobile Slider / Desktop Grid */}
+      <MobileGamingSlider
+        key={selectedRole}
+        instruction="SWIPE CARDS TO VIEW ALL MINIONS"
+        counterPrefix="MINION"
+        desktopGridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6"
+      >
         {filteredEmployees.map((employee, idx) => (
           <Reveal
             key={employee.id}
@@ -74,7 +80,7 @@ export function Minions() {
             <EmployeeCard employee={employee} />
           </Reveal>
         ))}
-      </div>
+      </MobileGamingSlider>
     </Section>
   );
 }

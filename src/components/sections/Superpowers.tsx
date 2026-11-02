@@ -3,6 +3,7 @@ import { Section } from "@/components/layout/Section";
 import { FeatureCard } from "@/components/cards/FeatureCard";
 import { featuresData, featuresHeadline, featuresSubheadline } from "@/data/features";
 import { Reveal } from "@/components/ui/Reveal";
+import { MobileGamingSlider } from "@/components/game/MobileGamingSlider";
 
 export function Superpowers() {
   return (
@@ -12,7 +13,11 @@ export function Superpowers() {
       title={featuresHeadline}
       subtitle={featuresSubheadline}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <MobileGamingSlider
+        instruction="SWIPE TO INSPECT BOSS ABILITIES"
+        counterPrefix="ABILITY"
+        desktopGridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+      >
         {featuresData.map((feature, idx) => (
           <Reveal
             key={feature.id}
@@ -23,7 +28,7 @@ export function Superpowers() {
             <FeatureCard feature={feature} />
           </Reveal>
         ))}
-      </div>
+      </MobileGamingSlider>
     </Section>
   );
 }
