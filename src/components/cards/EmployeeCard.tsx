@@ -14,7 +14,8 @@ interface EmployeeCardProps {
 function initials(name: string) {
   return name
     .split(/\s+/)
-    .filter(Boolean)
+    // Skip honorifics so "Bikram Sir" becomes "B", not "BS"
+    .filter((w) => w && !["sir", "da"].includes(w.toLowerCase()))
     .slice(0, 2)
     .map((w) => w[0]!.toUpperCase())
     .join("");

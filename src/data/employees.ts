@@ -145,4 +145,10 @@ export const employeesData: Employee[] = [
     funnyMessage: "Sir काम है या कोयले की खान\nजितना खोदते जा रहे है। उतना ही बढ़ते जा रहा है।।",
     birthdayMessage: "Happy Birthday Superboss",
   },
+  {
+    id: 18,
+    name: "Bikram Sir",
+    designation: "The Childhood Buddy",
+    birthdayMessage: "Happy Birthday, Pom! Keep rocking and stay the same crazy guy you've always been!",
+  },
 ];
