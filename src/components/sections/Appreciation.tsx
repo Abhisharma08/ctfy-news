@@ -5,14 +5,14 @@ import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 import { bossData } from "@/data/boss";
 import { Reveal } from "@/components/ui/Reveal";
-import { Heart, Sparkles, ScrollText, Crown } from "lucide-react";
+import { Heart, ScrollText, Crown } from "lucide-react";
 import { sounds } from "@/lib/sounds";
 
 export function Appreciation() {
   return (
     <Section
       id="appreciation"
-      badge="SECTION 05 // STORY CUTSCENE"
+      badge="SECTION 06 // STORY EPILOGUE"
       className="bg-gradient-to-b from-transparent via-[#0B1220]/80 to-transparent"
     >
       <div className="max-w-4xl mx-auto">
@@ -20,7 +20,7 @@ export function Appreciation() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-mono font-bold tracking-wider mb-3">
               <Heart className="w-3.5 h-3.5 fill-rose-400" />
-              <span>MAIN STORY QUEST // UNLOCKED MEMORY</span>
+              <span>MAIN STORY QUEST // FINAL TRANSMISSION</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-[#F5F1E8] font-heading leading-tight">
               {bossData.appreciationHeading}
@@ -50,10 +50,10 @@ export function Appreciation() {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono text-[#DDB65E] tracking-wider uppercase font-bold block">
-                    PARTY TRANSMISSION
+                    SPEAKER: THE MINIONS OF CONTENTIFY
                   </span>
                   <h4 className="text-base font-extrabold text-[#F5F1E8] font-heading">
-                    The Minions of Contentify
+                    To Our Extraordinary Leader
                   </h4>
                 </div>
               </div>
@@ -64,8 +64,8 @@ export function Appreciation() {
               </div>
             </div>
 
-            {/* Dialogue Narrative */}
-            <div className="space-y-5 text-[#F5F1E8] text-sm sm:text-base leading-relaxed font-sans relative z-10">
+            {/* Dialogue Narrative from Google Doc */}
+            <div className="space-y-4 text-[#F5F1E8] text-sm sm:text-base leading-relaxed font-sans relative z-10">
               {bossData.appreciationParagraphs.map((para, idx) => (
                 <p key={idx} className="text-[#F5F1E8]/90">
                   {para}
@@ -73,7 +73,7 @@ export function Appreciation() {
               ))}
             </div>
 
-            {/* Core Truth Callout Box */}
+            {/* Core Truth Closing Quote Callout */}
             <div className="mt-8 pt-6 border-t border-[#DDB65E]/20 text-center">
               <div className="inline-flex items-center gap-2 mb-3 text-xs font-mono text-[#DDB65E] tracking-widest uppercase">
                 <Crown className="w-4 h-4" />

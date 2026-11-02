@@ -1,18 +1,18 @@
 import React from "react";
 import { Section } from "@/components/layout/Section";
 import { FeatureCard } from "@/components/cards/FeatureCard";
-import { featuresData } from "@/data/features";
+import { featuresData, featuresHeadline, featuresSubheadline } from "@/data/features";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function Superpowers() {
   return (
     <Section
       id="superpowers"
-      badge="SECTION 03 // CORE FEATURES"
-      title="BUILT DIFFERENT. AUTOMATED BETTER."
-      subtitle="The five proprietary algorithms, superpowers, and workplace habits that turn chaos into flawless execution."
+      badge="SECTION 03 // THE BOSS EDITION"
+      title={featuresHeadline}
+      subtitle={featuresSubheadline}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {featuresData.map((feature, idx) => (
           <Reveal
             key={feature.id}

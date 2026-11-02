@@ -22,8 +22,8 @@ export function Navbar() {
     { label: "The Legend", href: "#legend" },
     { label: "Superpowers", href: "#superpowers" },
     { label: "Hall of Fame", href: "#awards" },
-    { label: "Appreciation", href: "#appreciation" },
     { label: "Minions", href: "#minions" },
+    { label: "Appreciation", href: "#appreciation" },
   ];
 
   return (

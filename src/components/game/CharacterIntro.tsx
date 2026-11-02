@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-import { Crown, Sparkles, Volume2, VolumeX, Shield, Zap, Flame, Infinity as InfinityIcon, Play, RefreshCw } from "lucide-react";
+import { Crown, Sparkles, Volume2, VolumeX, Shield, Zap, Flame, RefreshCw } from "lucide-react";
 import { bossData } from "@/data/boss";
 import { sounds } from "@/lib/sounds";
 import { fireCelebrationConfetti } from "@/components/ui/ConfettiButton";
@@ -15,7 +15,6 @@ export function CharacterIntro() {
   const badgeRef = useRef<HTMLDivElement>(null);
   const metersRef = useRef<HTMLDivElement>(null);
   const [sfxEnabled, setSfxEnabled] = useState(false);
-  const [hasPlayedIntro, setHasPlayedIntro] = useState(false);
 
   const toggleSound = () => {
     sounds.enabled = !sounds.enabled;
@@ -32,13 +31,11 @@ export function CharacterIntro() {
 
     const tl = gsap.timeline();
 
-    // Reset styles
-    gsap.set(cardRef.current, { scale: 0.85, opacity: 0, rotationY: -15 });
-    gsap.set(titleRef.current, { opacity: 0, y: 30, letterSpacing: "0.2em" });
+    gsap.set(cardRef.current, { scale: 0.88, opacity: 0, rotationY: -15 });
+    gsap.set(titleRef.current, { opacity: 0, y: 30, letterSpacing: "0.15em" });
     if (badgeRef.current) gsap.set(badgeRef.current, { scale: 0, opacity: 0 });
     if (metersRef.current) gsap.set(metersRef.current.querySelectorAll(".stat-bar-fill"), { width: "0%" });
 
-    // Sequence
     tl.to(cardRef.current, {
       opacity: 1,
       scale: 1,
@@ -75,10 +72,7 @@ export function CharacterIntro() {
           duration: 0.9,
           stagger: 0.12,
           ease: "power3.inOut",
-          onComplete: () => {
-            setHasPlayedIntro(true);
-            sounds.playVictory();
-          },
+          onComplete: () => sounds.playVictory(),
         },
         "-=0.3"
       );
@@ -90,7 +84,7 @@ export function CharacterIntro() {
 
   return (
     <div ref={containerRef} className="relative w-full pt-20 pb-12 sm:pt-28 sm:pb-16 overflow-hidden">
-      {/* Top Gaming HUD Bar for Mobile & Desktop */}
+      {/* Top Gaming HUD Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
         <div className="flex flex-wrap items-center justify-between gap-3 p-3 sm:p-4 rounded-2xl bg-[#111C30]/90 border border-[#DDB65E]/30 backdrop-blur-md shadow-lg">
           {/* Left Player Tag */}
@@ -113,13 +107,13 @@ export function CharacterIntro() {
             </div>
           </div>
 
-          {/* Right Audio & Action Buttons */}
+          {/* Right Action buttons */}
           <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={runIntroAnimation}
               type="button"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-[#1B2A43] text-[#DDB65E] border border-[#DDB65E]/30 hover:bg-[#DDB65E] hover:text-[#0B1220] transition-colors cursor-pointer"
-              title="Replay Character Intro"
+              title="Replay Intro Sequence"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">REPLAY INTRO</span>
@@ -133,7 +127,7 @@ export function CharacterIntro() {
                   ? "bg-[#DDB65E]/20 text-[#DDB65E] border-[#DDB65E]"
                   : "bg-[#111C30] text-[#A5B0C2] border-white/10 hover:border-white/20"
               }`}
-              title="Toggle Game SFX"
+              title="Toggle Game Audio Effects"
             >
               {sfxEnabled ? <Volume2 className="w-3.5 h-3.5 text-[#DDB65E]" /> : <VolumeX className="w-3.5 h-3.5" />}
               <span>{sfxEnabled ? "SFX: ON" : "SFX: MUTED"}</span>
@@ -146,9 +140,8 @@ export function CharacterIntro() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Fighter Stats & Dossier */}
+          {/* Left Column: Headlines & Supporting Copy */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            {/* Top Unlocked Badge */}
             <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1B2A43] border border-[#DDB65E]/50 shadow-[0_0_20px_rgba(221,182,94,0.3)]">
               <Crown className="w-4 h-4 text-[#DDB65E]" />
               <span className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-[#DDB65E] uppercase">
@@ -156,7 +149,7 @@ export function CharacterIntro() {
               </span>
             </div>
 
-            {/* Giant Game Title */}
+            {/* Main Headline */}
             <h1
               ref={titleRef}
               className="text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-[#F5F1E8] font-hero leading-[1.08]"
@@ -167,18 +160,20 @@ export function CharacterIntro() {
               </span>
             </h1>
 
-            {/* Subtitle / Subtitle Quote */}
+            {/* Subheadline from Google Doc */}
             <div className="inline-block p-1 px-3 rounded-lg bg-[#111C30] border-l-4 border-[#DDB65E] text-xs sm:text-sm font-mono text-[#DDB65E]">
-              &ldquo;{bossData.subtitle}&rdquo;
+              &ldquo;{bossData.subheadline}&rdquo;
             </div>
 
-            {/* Lore Summary */}
-            <p className="text-sm sm:text-base text-[#A5B0C2] leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
-              {bossData.heroCopy}
-            </p>
+            {/* Supporting Copy Paragraphs from Google Doc */}
+            <div className="space-y-3 text-sm sm:text-base text-[#A5B0C2] leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
+              {bossData.heroCopy.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
 
-            {/* Combat Stat Bars (GSAP Animated) */}
-            <div ref={metersRef} className="space-y-3.5 pt-2 max-w-xl mx-auto lg:mx-0">
+            {/* Combat Stat Bars */}
+            <div ref={metersRef} className="space-y-3 pt-2 max-w-xl mx-auto lg:mx-0">
               {bossData.stats.map((stat) => (
                 <div key={stat.id} className="p-3 rounded-xl bg-[#111C30]/80 border border-white/5 space-y-1.5">
                   <div className="flex items-center justify-between text-xs font-mono">
@@ -187,7 +182,6 @@ export function CharacterIntro() {
                     </span>
                     <span className="text-[#DDB65E] font-bold">{stat.value}</span>
                   </div>
-                  {/* Gauge Bar */}
                   <div className="h-2 w-full bg-[#0B1220] rounded-full overflow-hidden border border-white/10">
                     <div
                       className={`stat-bar-fill h-full rounded-full bg-gradient-to-r ${stat.meterColor || "from-[#DDB65E] to-[#F4D992]"} shadow-sm`}
@@ -223,8 +217,8 @@ export function CharacterIntro() {
             </div>
           </div>
 
-          {/* Right Column: 3D Holographic Character Card */}
-          <div className="lg:col-span-5 flex justify-center">
+          {/* Right Column: 3D Holographic Character Card & Personality Tags */}
+          <div className="lg:col-span-5 flex flex-col items-center">
             <div
               ref={cardRef}
               className="relative group w-full max-w-sm sm:max-w-md perspective-1000"
@@ -234,7 +228,6 @@ export function CharacterIntro() {
 
               {/* Character Card Body */}
               <div className="relative aspect-[3/4] w-full rounded-[28px] overflow-hidden border-2 border-[#DDB65E] bg-[#0B1220] shadow-[0_0_60px_rgba(221,182,94,0.3)]">
-                {/* Character Portrait */}
                 <Image
                   src={bossData.portrait}
                   alt="Boss Character Art"
@@ -244,10 +237,8 @@ export function CharacterIntro() {
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Cyber Scanline Grid Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0B1220]/20 to-[#0B1220]/90 pointer-events-none" />
 
-                {/* Top Corner Rarity Stamp */}
                 <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#0B1220]/80 border border-[#DDB65E]/40 backdrop-blur-md">
                   <Crown className="w-3.5 h-3.5 text-[#DDB65E]" />
                   <span className="text-[10px] font-mono font-bold text-[#DDB65E]">
@@ -276,7 +267,6 @@ export function CharacterIntro() {
                     </div>
                   </div>
 
-                  {/* Micro stats strip */}
                   <div className="grid grid-cols-3 gap-1 pt-2 border-t border-white/10 text-center text-[10px] font-mono">
                     <div className="p-1 rounded bg-white/5">
                       <span className="text-[#A5B0C2] block text-[9px]">PATIENCE</span>
@@ -293,6 +283,18 @@ export function CharacterIntro() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Personality Tags directly underneath photo from Google Doc */}
+            <div className="mt-5 flex flex-wrap gap-2 justify-center max-w-sm sm:max-w-md">
+              {bossData.personalityLabels.map((tag, idx) => (
+                <span
+                  key={idx}
+                  className="px-2.5 py-1 rounded-lg text-[10px] font-mono font-semibold bg-[#111C30] border border-[#DDB65E]/30 text-[#DDB65E] shadow-sm"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </div>

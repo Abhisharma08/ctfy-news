@@ -4,8 +4,8 @@ import { Hero } from "@/components/sections/Hero";
 import { MeetTheLegend } from "@/components/sections/MeetTheLegend";
 import { Superpowers } from "@/components/sections/Superpowers";
 import { HallOfFame } from "@/components/sections/HallOfFame";
-import { Appreciation } from "@/components/sections/Appreciation";
 import { Minions } from "@/components/sections/Minions";
+import { Appreciation } from "@/components/sections/Appreciation";
 import { Finale } from "@/components/sections/Finale";
 import { GameDock } from "@/components/game/GameDock";
 
@@ -27,11 +27,11 @@ export default function Home() {
       {/* 04. Hall of Fame - Achievements & Trophies */}
       <HallOfFame />
 
-      {/* 05. Story Cutscene - Behind the System is You */}
-      <Appreciation />
-
-      {/* 06. Party Roster - The 20 Minions */}
+      {/* 05. Party Roster - The 20 Minions Have Entered The Chat */}
       <Minions />
+
+      {/* 06. Story Epilogue - Behind The System Is A Human We Admire */}
+      <Appreciation />
 
       {/* 07. Grand Victory Finale */}
       <Finale />

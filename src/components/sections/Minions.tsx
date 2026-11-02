@@ -6,7 +6,7 @@ import { EmployeeCard } from "@/components/cards/EmployeeCard";
 import { employeesData } from "@/data/employees";
 import { Reveal } from "@/components/ui/Reveal";
 import { sounds } from "@/lib/sounds";
-import { Users, Filter } from "lucide-react";
+import { Users, Filter, Sparkles, Heart } from "lucide-react";
 
 export function Minions() {
   const [selectedRole, setSelectedRole] = useState<string>("ALL");
@@ -26,11 +26,22 @@ export function Minions() {
   return (
     <Section
       id="minions"
-      badge="SECTION 06 // PARTY ROSTER"
-      title="THE MINIONS HAVE ENTERED THE CHAT"
-      subtitle="20 loyal party members assembled from across Contentify to back the Supreme Boss."
+      badge="SECTION 05 // PARTY ROSTER"
+      title="THE MINIONS HAVE ENTERED THE CHAT."
+      subtitle="20 employees. One legendary boss. Countless tracker updates. And a whole lot of appreciation."
     >
-      {/* Role Filter Tabs for Mobile & Desktop */}
+      {/* Fan Club Motto Banner from Google Doc */}
+      <Reveal direction="up" delay={0.05}>
+        <div className="max-w-xl mx-auto mb-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1B2A43] border border-[#DDB65E]/40 text-xs sm:text-sm font-mono text-[#DDB65E] font-bold shadow-md">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>“Every legend has a fan club. Here&apos;s yours.”</span>
+            <Sparkles className="w-3.5 h-3.5" />
+          </div>
+        </div>
+      </Reveal>
+
+      {/* Role Filter Tabs */}
       <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
         <div className="flex items-center gap-1.5 px-3 py-1 text-xs font-mono text-[#DDB65E] mr-1 hidden sm:flex">
           <Filter className="w-3.5 h-3.5" />

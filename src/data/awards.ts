@@ -1,5 +1,11 @@
 import { Award } from "@/types";
 
+export const awardsHeadline = "THE LEGENDARY ACHIEVEMENTS BOARD.";
+export const awardsSubheadline =
+  "Some awards are earned. Some are deserved. And some are basically his job description at this point. Let's give credit where credit is due.";
+export const awardsDisclaimer =
+  "Disclaimer: These awards are based on years of first-hand observation, countless team interactions and an entirely unofficial jury of Team Contentify.";
+
 export const awardsData: Award[] = [
   {
     id: 1,

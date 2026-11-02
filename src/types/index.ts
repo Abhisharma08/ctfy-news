@@ -15,16 +15,18 @@ export interface Feature {
   id: number;
   number: string;
   title: string;
-  subtitle: string;
-  description: string;
+  mode: string;
+  tagline: string;
+  quote: string;
   superpower: string;
-  badge: string;
+  sideEffectOrPhrase?: {
+    label: string;
+    text: string;
+  };
   iconName: string;
-  // RPG Skill attributes
-  skillType?: "Ultimate" | "Passive" | "Active" | "Defense" | "Aura";
-  manaCost?: string;
-  cooldown?: string;
-  powerLevel?: number;
+  skillType: "Passive" | "Active" | "Ultimate" | "Defense" | "Aura";
+  manaCost: string;
+  cooldown: string;
 }
 
 export interface Award {
@@ -33,7 +35,6 @@ export interface Award {
   description: string;
   iconName: string;
   category?: string;
-  // Trophy attributes
   trophyTier?: "Platinum" | "Mythic" | "Gold";
   rarity?: string;
   xpReward?: string;

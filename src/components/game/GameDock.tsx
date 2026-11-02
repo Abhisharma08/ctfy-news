@@ -13,8 +13,8 @@ export function GameDock() {
     { id: "legend", label: "Dossier", icon: Crown, href: "#legend" },
     { id: "superpowers", label: "Skills", icon: Zap, href: "#superpowers" },
     { id: "awards", label: "Trophies", icon: Trophy, href: "#awards" },
-    { id: "appreciation", label: "Lore", icon: Heart, href: "#appreciation" },
     { id: "minions", label: "Party (20)", icon: Users, href: "#minions" },
+    { id: "appreciation", label: "Lore", icon: Heart, href: "#appreciation" },
   ];
 
   useEffect(() => {

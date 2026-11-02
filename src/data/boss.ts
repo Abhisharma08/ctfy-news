@@ -2,26 +2,36 @@ import { Stat } from "@/types";
 
 export const bossData = {
   name: "The Boss",
-  title: "The Boss of One of a Kind",
-  subtitle: "Not your regular boss. The ultimate-level boss.",
+  title: "THE BOSS OF ONE OF A KIND.",
+  subheadline: "Introducing the ultimate-level boss. The man. The myth. The legend.",
   company: "Contentify",
   portrait: "/images/boss/boss-portrait.jpg",
   characterClass: "SUPREME ARCHITECT · S-TIER LEADER",
   level: 99,
   rarity: "MYTHIC ★★★★★★",
   guild: "GUILD OF CONTENTIFY",
-  heroCopy:
-    "Introducing the man, the myth, the legend. A rare combination of charisma, kindness, leadership, unlimited second chances, and an extraordinary ability to turn absolutely anything into a tracker.",
+  heroCopy: [
+    "Some people manage teams. Some people lead teams. And then there's him: the rare breed who manages targets, builds trackers, automates literally everything and still somehow finds time to support and motivate everyone.",
+    "A leader with main-character energy, a heart of gold and an unmatched ability to turn literally any conversation into a discussion about trackers.",
+  ],
   personalityLabels: [
     "THE VISIONARY",
     "THE TRACKER ARCHITECT",
     "THE AUTOMATION KING",
-    "THE TARGET TERMINATOR",
     "THE TEAM'S KNIGHT IN SHINING ARMOUR",
   ],
   legendHeading: "NOT YOUR REGULAR BOSS. A WHOLE DIFFERENT LEVEL.",
-  legendDescription:
-    "Some leaders give orders. Others send emails. Our boss builds a multi-tab automated spreadsheet ecosystem, resolves an existential client crisis before lunch, and still stops by to ask if you've eaten. Equal parts visionary strategist, walking automation proposal, and patient mentor—he's the reason Contentify moves fast, dreams bigger, and laughs through the chaos.",
+  legendSubheadline: "A little bit of everything. A whole lot of greatness.",
+  legendBulletPoints: [
+    { label: "Charismatic?", value: "Absolutely." },
+    { label: "Kind-hearted?", value: "Always." },
+    { label: "A walking automation proposal?", value: "Definitely." },
+  ],
+  legendDescription: [
+    "He's the kind of leader who doesn't just tell people what to do. He gives them opportunities, trusts them with responsibilities and believes in their potential, sometimes even when they need a second, third or fourth chance.",
+    "He leads from the front, takes responsibility when things get tough and somehow manages to make even the most complicated situations look manageable.",
+    "Basically, if leadership had a cheat code, we're pretty sure he found it.",
+  ],
   stats: [
     {
       id: 1,
@@ -36,7 +46,7 @@ export const bossData = {
       id: 2,
       label: "TEAM SHIELD [DEF]",
       value: "100%",
-      note: "Always shields the team and takes the heat when fires break out",
+      note: "Takes the heat, handles the situation and protects his people",
       iconName: "ShieldCheck",
       meterPercentage: 100,
       meterColor: "from-blue-400 to-indigo-500",
@@ -45,7 +55,7 @@ export const bossData = {
       id: 3,
       label: "SECOND CHANCES [REVIVE]",
       value: "Unlimited",
-      note: "Believes people are worth way more than accidental bugs or misses",
+      note: "Gives people room to learn, grow, make mistakes and come back stronger",
       iconName: "Sparkles",
       meterPercentage: 100,
       meterColor: "from-amber-400 to-[#DDB65E]",
@@ -60,16 +70,19 @@ export const bossData = {
       meterColor: "from-rose-500 to-orange-500",
     },
   ] as Stat[],
-  appreciationHeading:
-    "BEHIND ALL THE TRACKERS, TARGETS & AUTOMATION... THERE'S YOU.",
+  appreciationHeading: "BEHIND THE SYSTEM IS A HUMAN WE ADMIRE.",
+  appreciationSubheadline: "Jokes about trackers aside, there's something much bigger that makes you who you are.",
   appreciationParagraphs: [
-    "It's easy to joke about the daily targets, the color-coded spreadsheets, and the automation scripts that solve problems we didn't even know we had. But beneath every system, protocol, and deadline lies something much rarer in modern leadership: profound, unwavering trust in your team.",
-    "Thank you for never hesitating to step in when a client crisis erupts, for taking responsibility when things go sideways, and for offering second, third, and fourth chances when someone is learning. You don't just assign tasks—you create opportunities that change the trajectories of our careers.",
-    "You have built Contentify into a powerhouse, but more importantly, you've created a culture where people feel heard, backed, and inspired to bring their best self every single day.",
+    "Jokes about trackers aside, there's something much bigger that makes you who you are.",
+    "It's the way you believe in people. The way you give opportunities, even when things don't go as planned. The way you step up when things get difficult. And the way you make sure your team never feels like they're facing challenges alone.",
+    "You're more than the person setting targets and asking us to update trackers.",
+    "You're the person who gives us the confidence to aim higher, the freedom to learn, and the reassurance that someone has our back.",
+    "The automation ideas might be endless, the trackers might never stop growing, and the targets might keep getting bigger...",
+    "But the respect and appreciation we have for you? That's on another level.",
   ],
   appreciationClosing:
     "Thank you for being the kind of leader who doesn't just build a better team, but helps build better people.",
-  finaleHeadline: "VICTORY ACHIEVED! HAPPY BIRTHDAY, BOSS!",
+  finaleHeadline: "HAPPY BIRTHDAY, BOSS!",
   finaleTagline: "THE ORIGINAL. THE ICON. THE ONE OF ONE.",
   finaleCopy:
     "From your favourite minions at Contentify, with love, laughter and all the trackers we could ever need. ❤️",
