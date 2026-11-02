@@ -14,7 +14,7 @@ export function Superpowers() {
       subtitle={featuresSubheadline}
     >
       <MobileGamingSlider
-        instruction="SWIPE TO INSPECT BOSS ABILITIES"
+        instruction="SWIPE TO VIEW ALL 5 BOSS SUPERPOWERS"
         counterPrefix="ABILITY"
         desktopGridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
       >

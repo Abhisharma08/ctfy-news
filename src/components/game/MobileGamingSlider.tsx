@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Hand, Sparkles } from "lucide-react";
+import React, { useRef, useState } from "react";
+import { ChevronLeft, ChevronRight, MoveHorizontal, Hand, Sparkles } from "lucide-react";
 import { sounds } from "@/lib/sounds";
 
 interface MobileGamingSliderProps {
@@ -14,8 +14,8 @@ interface MobileGamingSliderProps {
 
 export function MobileGamingSlider({
   children,
-  instruction = "SLIDE / SWIPE TO VIEW MORE",
-  counterPrefix = "ITEM",
+  instruction = "SWIPE TO BROWSE CARDS",
+  counterPrefix = "CARD",
   desktopGridClassName = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8",
   showInstruction = true,
 }: MobileGamingSliderProps) {
@@ -64,18 +64,27 @@ export function MobileGamingSlider({
       {/* ================= MOBILE SLIDER VIEW (< lg) ================= */}
       <div className="block lg:hidden">
         
-        {/* Gaming Instruction Banner */}
+        {/* Gaming Instruction Banner (Prominent Swipe Alert) */}
         {showInstruction && (
-          <div className="mb-3 px-3 py-2 rounded-xl bg-gradient-to-r from-[#1B2A43] via-[#111C30] to-[#1B2A43] border border-[#DDB65E]/40 shadow-[0_0_15px_rgba(221,182,94,0.15)] flex items-center justify-between gap-2 text-xs font-mono">
-            <div className="flex items-center gap-2 text-[#DDB65E] font-bold">
-              <span className="inline-block animate-bounce">👉</span>
-              <span className="text-[11px] sm:text-xs tracking-wider uppercase font-bold">
-                {instruction}
-              </span>
+          <div className="mb-3.5 px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-[#1B2A43] via-[#111C30] to-[#1B2A43] border-2 border-[#DDB65E]/50 shadow-[0_0_20px_rgba(221,182,94,0.2)] flex items-center justify-between gap-2 text-xs font-mono">
+            <div className="flex items-center gap-2.5 text-[#F5F1E8]">
+              <div className="w-7 h-7 rounded-lg bg-[#DDB65E] text-[#0B1220] flex items-center justify-center shrink-0 shadow-md">
+                <MoveHorizontal className="w-4 h-4 animate-pulse stroke-[2.5]" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[11px] sm:text-xs tracking-wider uppercase font-extrabold text-[#DDB65E] flex items-center gap-1.5 leading-none">
+                  <span>SWIPE HORIZONTALLY</span>
+                  <span className="inline-block animate-bounce">➔</span>
+                </span>
+                <span className="text-[9px] font-mono text-[#A5B0C2] uppercase tracking-wide mt-0.5">
+                  {instruction}
+                </span>
+              </div>
             </div>
-            <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#0B1220] border border-[#DDB65E]/30 text-[10px] text-[#F5F1E8] font-bold shrink-0">
+
+            <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#0B1220] border border-[#DDB65E]/40 text-[11px] text-[#DDB65E] font-bold font-mono shrink-0 shadow-inner">
               <span>{String(activeIndex + 1).padStart(2, "0")}</span>
-              <span className="text-[#A5B0C2]">/</span>
+              <span className="text-[#A5B0C2]/60">/</span>
               <span className="text-[#A5B0C2]">{String(total).padStart(2, "0")}</span>
             </div>
           </div>
@@ -90,7 +99,7 @@ export function MobileGamingSlider({
           {children.map((child, idx) => (
             <div
               key={idx}
-              className="w-[84vw] max-w-[340px] shrink-0 snap-center transition-opacity duration-300"
+              className="w-[84vw] max-w-[340px] shrink-0 snap-center transition-opacity duration-300 relative"
             >
               {child}
             </div>
@@ -98,16 +107,19 @@ export function MobileGamingSlider({
         </div>
 
         {/* Gaming HUD Carousel Controls */}
-        <div className="mt-3 flex items-center justify-between px-2 py-2 rounded-xl bg-[#111C30]/80 border border-[#DDB65E]/20 backdrop-blur-md">
+        <div className="mt-2.5 flex items-center justify-between px-3 py-2 rounded-xl bg-[#111C30]/90 border border-[#DDB65E]/30 backdrop-blur-md shadow-md">
           
-          {/* Active Card Monospace Counter */}
-          <div className="flex items-center gap-1 text-[11px] font-mono text-[#DDB65E] font-bold">
+          {/* Active Card Monospace Counter + Swipe Hint */}
+          <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#DDB65E] font-bold">
             <span className="text-[#A5B0C2] uppercase text-[9px]">{counterPrefix}:</span>
             <span>[{String(activeIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}]</span>
+            <span className="text-[9px] text-[#A5B0C2] hidden xs:inline ml-1">
+              (SWIPE ◄ ⇄ ►)
+            </span>
           </div>
 
           {/* Dots / Progress Bar */}
-          <div className="flex items-center gap-1 max-w-[140px] overflow-hidden">
+          <div className="flex items-center gap-1 max-w-[120px] overflow-hidden">
             {total <= 10 ? (
               children.map((_, i) => (
                 <button
@@ -124,7 +136,7 @@ export function MobileGamingSlider({
               ))
             ) : (
               // For 20+ items, show a sleek segmented progress track
-              <div className="w-24 h-1.5 rounded-full bg-white/10 overflow-hidden">
+              <div className="w-20 h-1.5 rounded-full bg-white/10 overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-[#DDB65E] to-[#F4D992] transition-all duration-200"
                   style={{ width: `${((activeIndex + 1) / total) * 100}%` }}

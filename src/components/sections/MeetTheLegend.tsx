@@ -53,7 +53,7 @@ export function MeetTheLegend() {
 
         {/* 4 Stat Cards with Mobile Gaming Slider */}
         <MobileGamingSlider
-          instruction="SWIPE TO INSPECT COMBAT STATS"
+          instruction="SWIPE TO INSPECT ALL 4 COMBAT METRICS"
           counterPrefix="STAT"
           desktopGridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-2"
         >

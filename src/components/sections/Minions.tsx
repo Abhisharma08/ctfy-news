@@ -67,7 +67,7 @@ export function Minions() {
       {/* Gaming Mobile Slider / Desktop Grid */}
       <MobileGamingSlider
         key={selectedRole}
-        instruction="SWIPE CARDS TO VIEW ALL MINIONS"
+        instruction="SWIPE TO INSPECT ALL 20 PARTY MEMBERS"
         counterPrefix="MINION"
         desktopGridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6"
       >
