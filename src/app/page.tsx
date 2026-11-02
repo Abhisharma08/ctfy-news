@@ -8,10 +8,17 @@ import { Minions } from "@/components/sections/Minions";
 import { Appreciation } from "@/components/sections/Appreciation";
 import { Finale } from "@/components/sections/Finale";
 import { GameDock } from "@/components/game/GameDock";
+import { GameProvider } from "@/lib/game";
+import { StartScreen } from "@/components/game/StartScreen";
+import { TrackerRush } from "@/components/sections/TrackerRush";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0B1220] text-[#F5F1E8] relative selection:bg-[#DDB65E] selection:text-[#0B1220] pb-16">
+    <GameProvider>
+    <main className="min-h-screen bg-paper text-ink relative selection:bg-gold selection:text-ink pb-28">
+      {/* Arcade title screen */}
+      <StartScreen />
+
       {/* Top sticky HUD navigation */}
       <Navbar />
 
@@ -30,6 +37,9 @@ export default function Home() {
       {/* 05. Party Roster - The 20 Minions Have Entered The Chat */}
       <Minions />
 
+      {/* Bonus Stage - Tracker Rush mini-game */}
+      <TrackerRush />
+
       {/* 06. Story Epilogue - Behind The System Is A Human We Admire */}
       <Appreciation />
 
@@ -42,5 +52,6 @@ export default function Home() {
       {/* Game Controller Dock (Bottom navigation for mobile & desktop) */}
       <GameDock />
     </main>
+    </GameProvider>
   );
 }

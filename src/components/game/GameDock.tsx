@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { User, Zap, Trophy, Users, Heart, Crown, FileSpreadsheet } from "lucide-react";
+import { User, Zap, Trophy, Users, Heart, Crown, Gamepad2 } from "lucide-react";
 import { sounds } from "@/lib/sounds";
-import { EasterEggModal } from "@/components/ui/EasterEggModal";
+import { QuestSystem, XpBar } from "@/components/game/QuestSystem";
 
 export function GameDock() {
   const [activeSection, setActiveSection] = useState("hero");
+  const [logOpen, setLogOpen] = useState(false);
 
   const dockItems = [
     { id: "hero", label: "Profile", icon: User, href: "#hero" },
@@ -14,6 +15,7 @@ export function GameDock() {
     { id: "superpowers", label: "Skills", icon: Zap, href: "#superpowers" },
     { id: "awards", label: "Trophies", icon: Trophy, href: "#awards" },
     { id: "minions", label: "Party", icon: Users, href: "#minions" },
+    { id: "arcade", label: "Arcade", icon: Gamepad2, href: "#arcade" },
     { id: "appreciation", label: "Lore", icon: Heart, href: "#appreciation" },
   ];
 
@@ -38,8 +40,12 @@ export function GameDock() {
   }, []);
 
   return (
+    <>
+    <QuestSystem logOpen={logOpen} onCloseLog={() => setLogOpen(false)} />
     <div className="fixed bottom-3 inset-x-0 z-40 flex justify-center px-3 pointer-events-none">
-      <nav className="pointer-events-auto max-w-lg w-full p-1.5 sm:p-2 rounded-2xl bg-[#0B1220]/90 border border-[#DDB65E]/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex items-center justify-between gap-1">
+      <div className="max-w-lg w-full">
+      <XpBar onOpen={() => setLogOpen(true)} />
+      <nav className="pointer-events-auto w-full p-1.5 sm:p-2 rounded-2xl bg-paper/90 border border-gold/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(11,18,32,0.12)] flex items-center justify-between gap-1">
         {dockItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeSection === item.id;
@@ -50,11 +56,11 @@ export function GameDock() {
               onClick={() => sounds.playBlip()}
               className={`flex-1 py-1.5 px-1 sm:px-2 rounded-xl flex flex-col items-center justify-center transition-all duration-200 ${
                 isActive
-                  ? "bg-gradient-to-t from-[#DDB65E]/20 to-[#1B2A43] text-[#DDB65E] border border-[#DDB65E]/40 shadow-sm scale-105"
-                  : "text-[#A5B0C2] hover:text-[#F5F1E8] hover:bg-white/5"
+                  ? "bg-gradient-to-t from-gold/20 to-cream text-gold-deep border border-gold/40 shadow-sm scale-105"
+                  : "text-ink-soft hover:text-ink hover:bg-ink/5"
               }`}
             >
-              <Icon className={`w-4 h-4 ${isActive ? "text-[#DDB65E]" : "text-[#A5B0C2]"}`} />
+              <Icon className={`w-4 h-4 ${isActive ? "text-gold-deep" : "text-ink-soft"}`} />
               <span className="text-[9px] sm:text-[10px] font-mono mt-0.5 tracking-tight truncate max-w-[50px] sm:max-w-none">
                 {item.label}
               </span>
@@ -62,6 +68,8 @@ export function GameDock() {
           );
         })}
       </nav>
+      </div>
     </div>
+    </>
   );
 }

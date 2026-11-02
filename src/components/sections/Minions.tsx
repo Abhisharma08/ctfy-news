@@ -34,7 +34,7 @@ export function Minions() {
       {/* Fan Club Motto Banner from Google Doc */}
       <Reveal direction="up" delay={0.05}>
         <div className="max-w-xl mx-auto mb-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1B2A43] border border-[#DDB65E]/40 text-xs sm:text-sm font-mono text-[#DDB65E] font-bold shadow-md">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cream border border-gold/40 text-xs sm:text-sm font-mono text-gold-deep font-bold shadow-md">
             <Sparkles className="w-3.5 h-3.5" />
             <span>“Every legend has a fan club. Here&apos;s yours.”</span>
             <Sparkles className="w-3.5 h-3.5" />
@@ -44,7 +44,7 @@ export function Minions() {
 
       {/* Role Filter Tabs */}
       <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-        <div className="flex items-center gap-1.5 px-3 py-1 text-xs font-mono text-[#DDB65E] mr-1 hidden sm:flex">
+        <div className="flex items-center gap-1.5 px-3 py-1 text-xs font-mono text-gold-deep mr-1 hidden sm:flex">
           <Filter className="w-3.5 h-3.5" />
           <span>FILTER BY CLASS:</span>
         </div>
@@ -55,8 +55,8 @@ export function Minions() {
             type="button"
             className={`px-3 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer ${
               selectedRole === role
-                ? "bg-[#DDB65E] text-[#0B1220] shadow-[0_0_15px_rgba(221,182,94,0.4)] scale-105"
-                : "bg-[#111C30] text-[#A5B0C2] border border-white/10 hover:border-[#DDB65E]/40 hover:text-white"
+                ? "bg-gold text-ink shadow-[0_0_15px_rgba(201,162,77,0.4)] scale-105"
+                : "bg-canvas text-ink-soft border border-ink/15 hover:border-gold/40 hover:text-ink"
             }`}
           >
             {role === "ALL" ? `ALL PARTY (${employeesData.length})` : role}

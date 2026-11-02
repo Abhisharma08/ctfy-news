@@ -58,7 +58,7 @@ export const bossData = {
       note: "Gives people room to learn, grow, make mistakes and come back stronger",
       iconName: "Sparkles",
       meterPercentage: 100,
-      meterColor: "from-amber-400 to-[#DDB65E]",
+      meterColor: "from-amber-400 to-gold",
     },
     {
       id: 4,

@@ -32,18 +32,18 @@ export function Section({
         {(badge || title || subtitle) && (
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             {badge && (
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium tracking-widest uppercase bg-[#1B2A43] text-[#DDB65E] border border-[#DDB65E]/30 mb-4 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#DDB65E] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium tracking-widest uppercase bg-cream text-gold-deep border border-gold/30 mb-4 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
                 {badge}
               </div>
             )}
             {title && (
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F5F1E8] font-heading">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink font-heading">
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="mt-4 text-base sm:text-lg text-[#A5B0C2] leading-relaxed max-w-2xl mx-auto font-sans">
+              <p className="mt-4 text-base sm:text-lg text-ink-soft leading-relaxed max-w-2xl mx-auto font-sans">
                 {subtitle}
               </p>
             )}

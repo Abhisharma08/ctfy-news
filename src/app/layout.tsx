@@ -6,7 +6,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#0B1220",
+  themeColor: "#FFFFFF",
 };
 
 const playfair = Playfair_Display({
@@ -79,7 +79,7 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${manrope.variable} ${inter.variable} ${spaceGrotesk.variable} scroll-smooth`}
     >
-      <body className="min-h-screen bg-[#0B1220] text-[#F5F1E8] antialiased selection:bg-[#DDB65E] selection:text-[#0B1220] font-sans">
+      <body className="min-h-screen bg-paper text-ink antialiased selection:bg-gold-light selection:text-ink font-sans">
         {children}
       </body>
     </html>

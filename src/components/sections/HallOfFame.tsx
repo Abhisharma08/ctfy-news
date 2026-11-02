@@ -28,8 +28,8 @@ export function HallOfFame() {
 
       {/* Official Unofficial Disclaimer from Google Doc */}
       <Reveal direction="up" delay={0.4}>
-        <div className="mt-8 sm:mt-12 max-w-2xl mx-auto p-4 rounded-2xl bg-[#111C30]/70 border border-[#DDB65E]/20 text-center text-xs font-mono text-[#A5B0C2] flex items-center justify-center gap-2">
-          <Info className="w-4 h-4 text-[#DDB65E] shrink-0" />
+        <div className="mt-8 sm:mt-12 max-w-2xl mx-auto p-4 rounded-2xl bg-canvas/70 border border-gold/20 text-center text-xs font-mono text-ink-soft flex items-center justify-center gap-2">
+          <Info className="w-4 h-4 text-gold-deep shrink-0" />
           <span>{awardsDisclaimer}</span>
         </div>
       </Reveal>

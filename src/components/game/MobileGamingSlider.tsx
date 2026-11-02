@@ -104,49 +104,49 @@ export function MobileGamingSlider({
         
         {/* Animated Gaming Instruction Banner */}
         {showInstruction && (
-          <div className="mb-3.5 px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-[#1B2A43] via-[#111C30] to-[#1B2A43] border-2 border-[#DDB65E]/50 shadow-[0_0_25px_rgba(221,182,94,0.25)] flex items-center justify-between gap-2 text-xs font-mono relative overflow-hidden">
+          <div className="mb-3.5 px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-cream via-canvas to-cream border-2 border-gold/50 shadow-[0_0_25px_rgba(201,162,77,0.25)] flex items-center justify-between gap-2 text-xs font-mono relative overflow-hidden">
             
             {/* Animated Light Sweep Effect */}
             <motion.div
               animate={{ x: ["-100%", "200%"] }}
               transition={{ repeat: Infinity, duration: 2.8, ease: "linear" }}
-              className="absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-[#DDB65E]/20 to-transparent pointer-events-none"
+              className="absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-gold/20 to-transparent pointer-events-none"
             />
 
-            <div className="flex items-center gap-2.5 text-[#F5F1E8] relative z-10">
+            <div className="flex items-center gap-2.5 text-ink relative z-10">
               {/* Animated Sliding Hand Icon */}
               <motion.div
                 animate={{ x: [0, 8, 0] }}
                 transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
-                className="w-7 h-7 rounded-lg bg-gradient-to-tr from-[#DDB65E] to-[#F4D992] text-[#0B1220] flex items-center justify-center shrink-0 shadow-md"
+                className="w-7 h-7 rounded-lg bg-gradient-to-tr from-gold to-gold-light text-ink flex items-center justify-center shrink-0 shadow-md"
               >
                 <Hand className="w-4 h-4 stroke-[2.5]" />
               </motion.div>
 
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[11px] sm:text-xs tracking-wider uppercase font-extrabold text-[#DDB65E] leading-none">
+                  <span className="text-[11px] sm:text-xs tracking-wider uppercase font-extrabold text-gold-deep leading-none">
                     SLIDE TO VIEW MORE
                   </span>
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
                     transition={{ repeat: Infinity, duration: 1, ease: "easeInOut" }}
-                    className="text-[#DDB65E] text-xs font-bold inline-block"
+                    className="text-gold-deep text-xs font-bold inline-block"
                   >
                     ➔
                   </motion.span>
                 </div>
-                <span className="text-[9px] font-mono text-[#A5B0C2] uppercase tracking-wide mt-0.5">
+                <span className="text-[9px] font-mono text-ink-soft uppercase tracking-wide mt-0.5">
                   {instruction}
                 </span>
               </div>
             </div>
 
             {/* Counter Pill */}
-            <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#0B1220] border border-[#DDB65E]/40 text-[11px] text-[#DDB65E] font-bold font-mono shrink-0 shadow-inner relative z-10">
+            <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-paper border border-gold/40 text-[11px] text-gold-deep font-bold font-mono shrink-0 shadow-inner relative z-10">
               <span>{String(activeIndex + 1).padStart(2, "0")}</span>
-              <span className="text-[#A5B0C2]/60">/</span>
-              <span className="text-[#A5B0C2]">{String(total).padStart(2, "0")}</span>
+              <span className="text-ink-soft/60">/</span>
+              <span className="text-ink-soft">{String(total).padStart(2, "0")}</span>
             </div>
           </div>
         )}
@@ -177,7 +177,7 @@ export function MobileGamingSlider({
                 exit={{ opacity: 0, x: 10 }}
                 onClick={handleNext}
                 type="button"
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 px-2.5 py-2 rounded-l-xl bg-[#0B1220]/95 border-y border-l border-[#DDB65E]/60 text-[#DDB65E] font-mono text-[10px] font-bold shadow-[0_0_20px_rgba(221,182,94,0.3)] flex items-center gap-1 cursor-pointer backdrop-blur-md active:scale-95"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 px-2.5 py-2 rounded-l-xl bg-paper/95 border-y border-l border-gold/60 text-gold-deep font-mono text-[10px] font-bold shadow-[0_0_20px_rgba(201,162,77,0.3)] flex items-center gap-1 cursor-pointer backdrop-blur-md active:scale-95"
               >
                 <motion.span
                   animate={{ x: [0, 4, 0] }}
@@ -192,13 +192,13 @@ export function MobileGamingSlider({
         </div>
 
         {/* Gaming HUD Carousel Controls Bar */}
-        <div className="mt-2.5 flex items-center justify-between px-3 py-2 rounded-xl bg-[#111C30]/90 border border-[#DDB65E]/30 backdrop-blur-md shadow-md">
+        <div className="mt-2.5 flex items-center justify-between px-3 py-2 rounded-xl bg-canvas/90 border border-gold/30 backdrop-blur-md shadow-md">
           
           {/* Active Card Monospace Counter + Live Gesture Hint */}
-          <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#DDB65E] font-bold">
-            <span className="text-[#A5B0C2] uppercase text-[9px]">{counterPrefix}:</span>
+          <div className="flex items-center gap-1.5 text-[11px] font-mono text-gold-deep font-bold">
+            <span className="text-ink-soft uppercase text-[9px]">{counterPrefix}:</span>
             <span>[{String(activeIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}]</span>
-            <span className="text-[9px] text-[#A5B0C2] hidden xs:inline ml-1 font-mono">
+            <span className="text-[9px] text-ink-soft hidden xs:inline ml-1 font-mono">
               (SLIDE ◄ ⇄ ►)
             </span>
           </div>
@@ -214,16 +214,16 @@ export function MobileGamingSlider({
                   aria-label={`Go to slide ${i + 1}`}
                   className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                     activeIndex === i
-                      ? "w-5 bg-[#DDB65E] shadow-[0_0_8px_rgba(221,182,94,0.6)]"
-                      : "w-1.5 bg-white/20 hover:bg-white/40"
+                      ? "w-5 bg-gold shadow-[0_0_8px_rgba(201,162,77,0.6)]"
+                      : "w-1.5 bg-ink/20 hover:bg-ink/40"
                   }`}
                 />
               ))
             ) : (
               // For 20+ items, show a sleek segmented progress track
-              <div className="w-20 h-1.5 rounded-full bg-white/10 overflow-hidden">
+              <div className="w-20 h-1.5 rounded-full bg-ink/10 overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-[#DDB65E] to-[#F4D992] transition-all duration-200"
+                  className="h-full bg-gradient-to-r from-gold to-gold-light transition-all duration-200"
                   style={{ width: `${((activeIndex + 1) / total) * 100}%` }}
                 />
               </div>
@@ -238,8 +238,8 @@ export function MobileGamingSlider({
               type="button"
               className={`p-1.5 rounded-lg border transition-all cursor-pointer ${
                 activeIndex === 0
-                  ? "bg-white/5 border-white/5 text-[#A5B0C2]/30 cursor-not-allowed"
-                  : "bg-[#1B2A43] border-[#DDB65E]/40 text-[#DDB65E] active:scale-95 hover:bg-[#DDB65E] hover:text-[#0B1220]"
+                  ? "bg-ink/5 border-ink/10 text-ink-soft/30 cursor-not-allowed"
+                  : "bg-cream border-gold/40 text-gold-deep active:scale-95 hover:bg-gold hover:text-ink"
               }`}
               aria-label="Previous card"
             >
@@ -251,8 +251,8 @@ export function MobileGamingSlider({
               type="button"
               className={`p-1.5 rounded-lg border transition-all cursor-pointer ${
                 activeIndex === total - 1
-                  ? "bg-white/5 border-white/5 text-[#A5B0C2]/30 cursor-not-allowed"
-                  : "bg-[#1B2A43] border-[#DDB65E]/40 text-[#DDB65E] active:scale-95 hover:bg-[#DDB65E] hover:text-[#0B1220]"
+                  ? "bg-ink/5 border-ink/10 text-ink-soft/30 cursor-not-allowed"
+                  : "bg-cream border-gold/40 text-gold-deep active:scale-95 hover:bg-gold hover:text-ink"
               }`}
               aria-label="Next card"
             >
@@ -263,8 +263,11 @@ export function MobileGamingSlider({
       </div>
 
       {/* ================= DESKTOP GRID VIEW (>= lg) ================= */}
-      <div className={`hidden lg:${desktopGridClassName.startsWith("grid") ? desktopGridClassName : `grid ${desktopGridClassName}`}`}>
-        {children}
+      {/* Static `lg:block` wrapper: Tailwind can't generate classes built at runtime like `lg:${...}` */}
+      <div className="hidden lg:block">
+        <div className={desktopGridClassName.startsWith("grid") ? desktopGridClassName : `grid ${desktopGridClassName}`}>
+          {children}
+        </div>
       </div>
     </div>
   );

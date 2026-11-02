@@ -1,9 +1,69 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
+
 // Web Audio API dynamic sound generator for game UI effects (zero external files required)
 class SoundManager {
   private ctx: AudioContext | null = null;
   public enabled: boolean = false; // defaults to off until user toggles or interacts
+  private listeners = new Set<() => void>();
+
+  public subscribe = (cb: () => void) => {
+    this.listeners.add(cb);
+    return () => {
+      this.listeners.delete(cb);
+    };
+  };
+
+  public setEnabled(value: boolean) {
+    this.enabled = value;
+    this.listeners.forEach((cb) => cb());
+  }
+
+  private tone(freq: number, start: number, dur: number, type: OscillatorType = "sine", vol = 0.1, endFreq?: number) {
+    if (!this.ctx) return;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    const t = this.ctx.currentTime + start;
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, t);
+    if (endFreq) osc.frequency.exponentialRampToValueAtTime(endFreq, t + dur);
+    gain.gain.setValueAtTime(vol, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + dur);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(t);
+    osc.stop(t + dur + 0.01);
+  }
+
+  /** Short coin-style chime for scoring points */
+  public playCoin() {
+    if (!this.enabled) return;
+    this.initCtx();
+    this.tone(988, 0, 0.06, "square", 0.05);
+    this.tone(1319, 0.06, 0.14, "square", 0.05);
+  }
+
+  /** Low buzz for a miss */
+  public playMiss() {
+    if (!this.enabled) return;
+    this.initCtx();
+    this.tone(180, 0, 0.18, "sawtooth", 0.05, 90);
+  }
+
+  /** Soft whoosh used when blowing out a candle */
+  public playPuff() {
+    if (!this.enabled) return;
+    this.initCtx();
+    this.tone(500, 0, 0.2, "triangle", 0.06, 120);
+  }
+
+  /** Rising arpeggio for "Achievement Unlocked" */
+  public playAchievement() {
+    if (!this.enabled) return;
+    this.initCtx();
+    [659.25, 783.99, 987.77, 1318.5].forEach((f, i) => this.tone(f, i * 0.07, 0.18, "triangle", 0.09));
+  }
 
   private initCtx() {
     if (!this.ctx && typeof window !== "undefined") {
@@ -58,7 +118,7 @@ class SoundManager {
   }
 
   public toggleMute(): boolean {
-    this.enabled = !this.enabled;
+    this.setEnabled(!this.enabled);
     return this.enabled;
   }
 
@@ -91,3 +151,12 @@ class SoundManager {
 }
 
 export const sounds = new SoundManager();
+
+/** React hook that stays in sync with the global SFX toggle */
+export function useSoundEnabled() {
+  return useSyncExternalStore(
+    sounds.subscribe,
+    () => sounds.enabled,
+    () => false
+  );
+}

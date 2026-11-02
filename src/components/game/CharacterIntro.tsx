@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { Crown, Sparkles, Volume2, VolumeX, Shield, Zap, Flame, RefreshCw } from "lucide-react";
 import { bossData } from "@/data/boss";
-import { sounds } from "@/lib/sounds";
+import { sounds, useSoundEnabled } from "@/lib/sounds";
 import { fireCelebrationConfetti } from "@/components/ui/ConfettiButton";
 
 export function CharacterIntro() {
@@ -14,12 +14,10 @@ export function CharacterIntro() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
   const metersRef = useRef<HTMLDivElement>(null);
-  const [sfxEnabled, setSfxEnabled] = useState(false);
+  const sfxEnabled = useSoundEnabled();
 
   const toggleSound = () => {
-    sounds.enabled = !sounds.enabled;
-    setSfxEnabled(sounds.enabled);
-    if (sounds.enabled) {
+    if (sounds.toggleMute()) {
       sounds.playBlip();
     }
   };
@@ -80,28 +78,32 @@ export function CharacterIntro() {
 
   useEffect(() => {
     runIntroAnimation();
+    // Replay the character reveal once the player leaves the title screen
+    const onStart = () => runIntroAnimation();
+    window.addEventListener("game:start", onStart);
+    return () => window.removeEventListener("game:start", onStart);
   }, []);
 
   return (
     <div ref={containerRef} className="relative w-full pt-24 pb-12 sm:pt-32 sm:pb-16 overflow-hidden">
       {/* Top Gaming HUD Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
-        <div className="flex items-center justify-between gap-2 p-2.5 sm:p-4 rounded-2xl bg-[#111C30]/90 border border-[#DDB65E]/30 backdrop-blur-md shadow-lg">
+        <div className="flex items-center justify-between gap-2 p-2.5 sm:p-4 rounded-2xl bg-canvas/90 border border-gold/30 backdrop-blur-md shadow-lg">
           {/* Left Player Tag */}
           <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-            <div className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-tr from-[#DDB65E] to-[#F4D992] text-[#0B1220] font-bold font-mono text-xs shadow-md shrink-0">
+            <div className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-tr from-gold to-gold-light text-ink font-bold font-mono text-xs shadow-md shrink-0">
               99
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <span className="text-xs sm:text-sm font-extrabold text-[#F5F1E8] font-heading tracking-wide uppercase truncate">
+                <span className="text-xs sm:text-sm font-extrabold text-ink font-heading tracking-wide uppercase truncate">
                   {bossData.name}
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#DDB65E]/20 text-[#DDB65E] font-semibold shrink-0">
+                <span className="text-[9px] sm:text-[10px] font-mono px-1.5 py-0.5 rounded bg-gold/20 text-gold-deep font-semibold shrink-0">
                   {bossData.rarity}
                 </span>
               </div>
-              <span className="text-[9px] sm:text-[10px] font-mono text-[#A5B0C2] block truncate max-w-[140px] xs:max-w-[220px] sm:max-w-none">
+              <span className="text-[9px] sm:text-[10px] font-mono text-ink-soft block truncate max-w-[140px] xs:max-w-[220px] sm:max-w-none">
                 {bossData.characterClass}
               </span>
             </div>
@@ -112,7 +114,7 @@ export function CharacterIntro() {
             <button
               onClick={runIntroAnimation}
               type="button"
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono bg-[#1B2A43] text-[#DDB65E] border border-[#DDB65E]/30 hover:bg-[#DDB65E] hover:text-[#0B1220] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono bg-cream text-gold-deep border border-gold/30 hover:bg-gold hover:text-ink transition-colors cursor-pointer"
               title="Replay Intro Sequence"
             >
               <RefreshCw className="w-3.5 h-3.5" />
@@ -124,12 +126,12 @@ export function CharacterIntro() {
               type="button"
               className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono border transition-all cursor-pointer ${
                 sfxEnabled
-                  ? "bg-[#DDB65E]/20 text-[#DDB65E] border-[#DDB65E]"
-                  : "bg-[#111C30] text-[#A5B0C2] border-white/10 hover:border-white/20"
+                  ? "bg-gold/20 text-gold-deep border-gold"
+                  : "bg-canvas text-ink-soft border-ink/15 hover:border-ink/25"
               }`}
               title="Toggle Game Audio Effects"
             >
-              {sfxEnabled ? <Volume2 className="w-3.5 h-3.5 text-[#DDB65E]" /> : <VolumeX className="w-3.5 h-3.5" />}
+              {sfxEnabled ? <Volume2 className="w-3.5 h-3.5 text-gold-deep" /> : <VolumeX className="w-3.5 h-3.5" />}
               <span className="hidden xs:inline">{sfxEnabled ? "SFX: ON" : "SFX: MUTED"}</span>
             </button>
           </div>
@@ -142,9 +144,9 @@ export function CharacterIntro() {
           
           {/* Left Column: Headlines & Supporting Copy */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1B2A43] border border-[#DDB65E]/50 shadow-[0_0_20px_rgba(221,182,94,0.3)]">
-              <Crown className="w-4 h-4 text-[#DDB65E]" />
-              <span className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-[#DDB65E] uppercase">
+            <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cream border border-gold/50 shadow-[0_0_20px_rgba(201,162,77,0.3)]">
+              <Crown className="w-4 h-4 text-gold-deep" />
+              <span className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-gold-deep uppercase">
                 ✦ CHARACTER UNLOCKED: FINAL FORM ✦
               </span>
             </div>
@@ -152,21 +154,21 @@ export function CharacterIntro() {
             {/* Main Headline */}
             <h1
               ref={titleRef}
-              className="text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-[#F5F1E8] font-hero leading-[1.08]"
+              className="text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-ink font-hero leading-[1.08]"
             >
               THE BOSS OF <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#DDB65E] via-[#F4D992] to-[#DDB65E] drop-shadow-md">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-deep via-gold-dark to-gold-deep drop-shadow-md">
                 ONE OF A KIND.
               </span>
             </h1>
 
             {/* Subheadline from Google Doc */}
-            <div className="inline-block p-1 px-3 rounded-lg bg-[#111C30] border-l-4 border-[#DDB65E] text-xs sm:text-sm font-mono text-[#DDB65E]">
+            <div className="inline-block p-1 px-3 rounded-lg bg-canvas border-l-4 border-gold text-xs sm:text-sm font-mono text-gold-deep">
               &ldquo;{bossData.subheadline}&rdquo;
             </div>
 
             {/* Supporting Copy Paragraphs from Google Doc */}
-            <div className="space-y-3 text-sm sm:text-base text-[#A5B0C2] leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
+            <div className="space-y-3 text-sm sm:text-base text-ink-soft leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
               {bossData.heroCopy.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
@@ -175,16 +177,16 @@ export function CharacterIntro() {
             {/* Combat Stat Bars */}
             <div ref={metersRef} className="space-y-3 pt-2 max-w-xl mx-auto lg:mx-0">
               {bossData.stats.map((stat) => (
-                <div key={stat.id} className="p-3 rounded-xl bg-[#111C30]/80 border border-white/5 space-y-1.5">
+                <div key={stat.id} className="p-3 rounded-xl bg-canvas/80 border border-ink/10 space-y-1.5">
                   <div className="flex items-center justify-between text-xs font-mono">
-                    <span className="text-[#A5B0C2] font-semibold flex items-center gap-1.5">
-                      <span className="text-[#DDB65E]">▶</span> {stat.label}
+                    <span className="text-ink-soft font-semibold flex items-center gap-1.5">
+                      <span className="text-gold-deep">▶</span> {stat.label}
                     </span>
-                    <span className="text-[#DDB65E] font-bold">{stat.value}</span>
+                    <span className="text-gold-deep font-bold">{stat.value}</span>
                   </div>
-                  <div className="h-2 w-full bg-[#0B1220] rounded-full overflow-hidden border border-white/10">
+                  <div className="h-2 w-full bg-paper rounded-full overflow-hidden border border-ink/15">
                     <div
-                      className={`stat-bar-fill h-full rounded-full bg-gradient-to-r ${stat.meterColor || "from-[#DDB65E] to-[#F4D992]"} shadow-sm`}
+                      className={`stat-bar-fill h-full rounded-full bg-gradient-to-r ${stat.meterColor || "from-gold to-gold-light"} shadow-sm`}
                       style={{ width: "100%" }}
                     />
                   </div>
@@ -197,7 +199,7 @@ export function CharacterIntro() {
               <a
                 href="#superpowers"
                 onClick={() => sounds.playSelect()}
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#DDB65E] to-[#F4D992] text-[#0B1220] font-extrabold text-sm sm:text-base shadow-[0_0_30px_rgba(221,182,94,0.4)] hover:shadow-[0_0_45px_rgba(221,182,94,0.65)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-gold to-gold-light text-ink font-extrabold text-sm sm:text-base shadow-[0_0_30px_rgba(201,162,77,0.4)] hover:shadow-[0_0_45px_rgba(201,162,77,0.65)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
               >
                 <Zap className="w-4 h-4 fill-current" />
                 <span>INSPECT SKILL TREE</span>
@@ -209,9 +211,9 @@ export function CharacterIntro() {
                   fireCelebrationConfetti();
                 }}
                 type="button"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#1B2A43] text-[#F5F1E8] border border-[#DDB65E]/40 hover:border-[#DDB65E] hover:bg-[#111C30] active:scale-95 transition-all text-sm font-semibold cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-cream text-ink border border-gold/40 hover:border-gold hover:bg-canvas active:scale-95 transition-all text-sm font-semibold cursor-pointer"
               >
-                <Sparkles className="w-4 h-4 text-[#DDB65E]" />
+                <Sparkles className="w-4 h-4 text-gold-deep" />
                 <span>TRIGGER SPECIAL VICTORY</span>
               </button>
             </div>
@@ -224,10 +226,10 @@ export function CharacterIntro() {
               className="relative group w-full max-w-sm sm:max-w-md perspective-1000"
             >
               {/* Animated Holographic Outer Border */}
-              <div className="absolute -inset-2 rounded-[34px] bg-gradient-to-tr from-[#DDB65E] via-[#38BDF8] to-[#DDB65E] opacity-75 blur-md group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
+              <div className="absolute -inset-2 rounded-[34px] bg-gradient-to-tr from-gold via-[#38BDF8] to-gold opacity-75 blur-md group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
 
               {/* Character Card Body */}
-              <div className="relative aspect-[3/4] w-full rounded-[28px] overflow-hidden border-2 border-[#DDB65E] bg-[#0B1220] shadow-[0_0_60px_rgba(221,182,94,0.3)]">
+              <div className="relative aspect-[3/4] w-full rounded-[28px] overflow-hidden border-2 border-gold bg-paper shadow-[0_0_60px_rgba(201,162,77,0.3)]">
                 <Image
                   src={bossData.portrait}
                   alt="Boss Character Art"
@@ -237,48 +239,48 @@ export function CharacterIntro() {
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0B1220]/20 to-[#0B1220]/90 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-paper/20 to-paper/90 pointer-events-none" />
 
-                <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#0B1220]/80 border border-[#DDB65E]/40 backdrop-blur-md">
-                  <Crown className="w-3.5 h-3.5 text-[#DDB65E]" />
-                  <span className="text-[10px] font-mono font-bold text-[#DDB65E]">
+                <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1 rounded-lg bg-paper/80 border border-gold/40 backdrop-blur-md">
+                  <Crown className="w-3.5 h-3.5 text-gold-deep" />
+                  <span className="text-[10px] font-mono font-bold text-gold-deep">
                     MYTHIC 1/1
                   </span>
                 </div>
 
-                <div className="absolute top-4 right-4 px-2.5 py-1 rounded-lg bg-[#0B1220]/80 border border-white/20 text-[10px] font-mono text-[#F5F1E8]">
+                <div className="absolute top-4 right-4 px-2.5 py-1 rounded-lg bg-paper/80 border border-ink/25 text-[10px] font-mono text-ink">
                   LVL 99
                 </div>
 
                 {/* Bottom Character Stats Badge */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-[#0B1220]/90 border border-[#DDB65E]/40 backdrop-blur-md shadow-xl">
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-paper/90 border border-gold/40 backdrop-blur-md shadow-xl">
                   <div className="flex items-center justify-between mb-2">
                     <div>
-                      <span className="text-[10px] font-mono text-[#DDB65E] tracking-wider uppercase font-bold block">
+                      <span className="text-[10px] font-mono text-gold-deep tracking-wider uppercase font-bold block">
                         SUPREME ARCHITECT
                       </span>
-                      <h3 className="text-xl font-extrabold text-[#F5F1E8] font-heading">
+                      <h3 className="text-xl font-extrabold text-ink font-heading">
                         {bossData.name}
                       </h3>
                     </div>
                     <div className="text-right">
-                      <span className="text-[10px] font-mono text-[#A5B0C2] block">PWR LEVEL</span>
-                      <span className="text-sm font-mono font-extrabold text-emerald-400">OVER 9000</span>
+                      <span className="text-[10px] font-mono text-ink-soft block">PWR LEVEL</span>
+                      <span className="text-sm font-mono font-extrabold text-emerald-700">OVER 9000</span>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-1 pt-2 border-t border-white/10 text-center text-[10px] font-mono">
-                    <div className="p-1 rounded bg-white/5">
-                      <span className="text-[#A5B0C2] block text-[9px]">PATIENCE</span>
-                      <span className="text-[#DDB65E] font-bold">∞</span>
+                  <div className="grid grid-cols-3 gap-1 pt-2 border-t border-ink/15 text-center text-[10px] font-mono">
+                    <div className="p-1 rounded bg-ink/5">
+                      <span className="text-ink-soft block text-[9px]">PATIENCE</span>
+                      <span className="text-gold-deep font-bold">∞</span>
                     </div>
-                    <div className="p-1 rounded bg-white/5">
-                      <span className="text-[#A5B0C2] block text-[9px]">SHIELD</span>
-                      <span className="text-blue-400 font-bold">100%</span>
+                    <div className="p-1 rounded bg-ink/5">
+                      <span className="text-ink-soft block text-[9px]">SHIELD</span>
+                      <span className="text-blue-700 font-bold">100%</span>
                     </div>
-                    <div className="p-1 rounded bg-white/5">
-                      <span className="text-[#A5B0C2] block text-[9px]">REVIVES</span>
-                      <span className="text-emerald-400 font-bold">UNLIMITED</span>
+                    <div className="p-1 rounded bg-ink/5">
+                      <span className="text-ink-soft block text-[9px]">REVIVES</span>
+                      <span className="text-emerald-700 font-bold">UNLIMITED</span>
                     </div>
                   </div>
                 </div>
@@ -290,7 +292,7 @@ export function CharacterIntro() {
               {bossData.personalityLabels.map((tag, idx) => (
                 <span
                   key={idx}
-                  className="px-2.5 py-1 rounded-lg text-[10px] font-mono font-semibold bg-[#111C30] border border-[#DDB65E]/30 text-[#DDB65E] shadow-sm"
+                  className="px-2.5 py-1 rounded-lg text-[10px] font-mono font-semibold bg-canvas border border-gold/30 text-gold-deep shadow-sm"
                 >
                   {tag}
                 </span>

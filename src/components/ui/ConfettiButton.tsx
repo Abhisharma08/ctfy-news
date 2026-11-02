@@ -14,7 +14,7 @@ export function fireCelebrationConfetti() {
   const count = 200;
   const defaults = {
     origin: { y: 0.7 },
-    colors: ["#DDB65E", "#F4D992", "#FFFFFF", "#1B2A43", "#FFD700"],
+    colors: ["#C9A24D", "#EAD49C", "#8A6620", "#101828", "#F4EEE1"],
   };
 
   function fire(particleRatio: number, opts: confetti.Options) {
@@ -64,11 +64,11 @@ export function ConfettiButton({
 
   const variantStyles = {
     primary:
-      "bg-gradient-to-r from-[#DDB65E] via-[#F4D992] to-[#DDB65E] text-[#0B1220] font-semibold hover:shadow-[0_0_30px_rgba(221,182,94,0.5)] active:scale-95",
+      "bg-gradient-to-r from-gold via-gold-light to-gold text-ink font-semibold hover:shadow-[0_0_30px_rgba(201,162,77,0.5)] active:scale-95",
     secondary:
-      "bg-[#1B2A43] text-[#F5F1E8] border border-[#DDB65E]/40 hover:border-[#DDB65E] hover:bg-[#111C30] active:scale-95",
+      "bg-cream text-ink border border-gold/40 hover:border-gold hover:bg-canvas active:scale-95",
     subtle:
-      "bg-transparent text-[#DDB65E] hover:bg-[#DDB65E]/10 border border-[#DDB65E]/20 active:scale-95",
+      "bg-transparent text-gold-deep hover:bg-gold/10 border border-gold/20 active:scale-95",
   };
 
   return (
