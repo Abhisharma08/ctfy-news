@@ -43,7 +43,7 @@ export function FeatureCard({ feature }: FeatureCardProps) {
   return (
     <div
       onClick={() => sounds.playBlip()}
-      className={`relative group rounded-3xl p-6 sm:p-7 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between cursor-pointer ${
+      className={`relative group rounded-3xl p-4 sm:p-7 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between cursor-pointer ${
         feature.isHighlighted
           ? "bg-gradient-to-br from-cream via-cream to-paper border-2 border-gold shadow-[0_0_40px_rgba(201,162,77,0.35)] ring-2 ring-gold/40"
           : "bg-gradient-to-br from-cream/90 via-canvas/95 to-paper border border-gold/30 hover:border-gold hover:shadow-[0_15px_40px_-10px_rgba(201,162,77,0.35)]"
@@ -52,14 +52,14 @@ export function FeatureCard({ feature }: FeatureCardProps) {
       <div>
         {/* Highlighted VIP Banner for Tracker */}
         {feature.isHighlighted && (
-          <div className="mb-4 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-gold via-gold-light to-gold text-ink font-mono text-[10px] font-black tracking-widest uppercase flex items-center justify-center gap-1.5 shadow-lg animate-pulse">
-            <Sparkles className="w-3.5 h-3.5 fill-current" />
-            <span>{feature.highlightBadge || "★ THE MAIN PART // UPDATED TRACKER ★"}</span>
+          <div className="mb-3 sm:mb-4 px-3 sm:px-3.5 py-1.5 rounded-full bg-gradient-to-r from-gold via-gold-light to-gold text-ink font-mono text-[9px] sm:text-[10px] font-black tracking-wider sm:tracking-widest uppercase flex items-center justify-center gap-1.5 shadow-lg animate-pulse">
+            <Sparkles className="w-3.5 h-3.5 fill-current shrink-0" />
+            <span className="truncate">{feature.highlightBadge || "★ THE MAIN PART // UPDATED TRACKER ★"}</span>
           </div>
         )}
 
         {/* Top Header: ID, Skill Type and Mode */}
-        <div className="flex items-center justify-between gap-2 mb-4">
+        <div className="flex items-center justify-between gap-2 mb-3 sm:mb-4">
           <div className="flex items-center gap-2">
             <span
               className={`text-xl font-mono font-extrabold transition-colors ${
@@ -121,7 +121,7 @@ export function FeatureCard({ feature }: FeatureCardProps) {
 
         {/* Embedded Interactive Spreadsheet Simulation for Updated Tracker */}
         {feature.isHighlighted && (
-          <div className="my-3.5 p-3 rounded-2xl bg-paper/95 border border-gold/50 font-mono text-[11px] shadow-inner space-y-2">
+          <div className="my-3 sm:my-3.5 p-3 rounded-2xl bg-paper/95 border border-gold/50 font-mono text-[11px] shadow-inner space-y-2">
             <div className="flex flex-wrap items-center justify-between gap-1.5 pb-1.5 border-b border-gold/20 text-gold-deep">
               <span className="font-bold flex items-center gap-1.5 text-[10px] min-w-0">
                 <FileSpreadsheet className="w-3.5 h-3.5 text-gold-deep shrink-0" />
@@ -134,7 +134,7 @@ export function FeatureCard({ feature }: FeatureCardProps) {
                 UPDATED (LIVE)
               </span>
             </div>
-            <div className="space-y-1.5 text-[10px]">
+            <div className="hidden sm:block space-y-1.5 text-[10px]">
               <div className="flex flex-col items-start gap-0.5 sm:flex-row sm:items-center sm:justify-between text-ink bg-ink/5 p-1.5 rounded">
                 <span className="sm:pr-2">1. Birthday Tribute Surprise</span>
                 <span className="text-emerald-700 font-bold shrink-0">COMPLETED ✅</span>
@@ -148,8 +148,8 @@ export function FeatureCard({ feature }: FeatureCardProps) {
                 <span className="text-purple-700 font-bold shrink-0">+200% EXCEEDED 🚀</span>
               </div>
             </div>
-            <div className="pt-2 border-t border-ink/15 flex items-center justify-between">
-              <span className="text-[9px] text-ink-soft">FORMULA: =CONCAT(LOVE, TARGETS)</span>
+            <div className="sm:pt-2 sm:border-t border-ink/15 flex items-center justify-between">
+              <span className="hidden sm:inline text-[9px] text-ink-soft">FORMULA: =CONCAT(LOVE, TARGETS)</span>
               <EasterEggModal
                 trigger={(open) => (
                   <button
@@ -158,7 +158,7 @@ export function FeatureCard({ feature }: FeatureCardProps) {
                       open();
                     }}
                     type="button"
-                    className="text-[10px] font-bold text-gold-deep hover:underline flex items-center gap-1 cursor-pointer bg-gold/15 px-2 py-0.5 rounded border border-gold/40"
+                    className="w-full sm:w-auto justify-center text-[10px] font-bold text-gold-deep hover:underline flex items-center gap-1 cursor-pointer bg-gold/15 px-2 py-1.5 sm:py-0.5 rounded border border-gold/40"
                   >
                     <span>OPEN SPREADSHEET</span>
                     <span>➔</span>
@@ -170,14 +170,14 @@ export function FeatureCard({ feature }: FeatureCardProps) {
         )}
 
         {/* Feature Quote */}
-        <div className="my-4 p-3 rounded-xl bg-paper/70 border border-ink/10 relative">
+        <div className="my-3 sm:my-4 p-3 rounded-xl bg-paper/70 border border-ink/10 relative">
           <p className="text-xs sm:text-sm text-ink/90 italic font-sans leading-relaxed">
             &ldquo;{feature.quote}&rdquo;
           </p>
         </div>
 
         {/* RPG Attributes: Mana Cost & Cooldown */}
-        <div className="grid grid-cols-2 gap-2 mb-4 text-[10px] font-mono">
+        <div className="hidden sm:grid grid-cols-2 gap-2 mb-4 text-[10px] font-mono">
           <div className="p-1.5 rounded bg-cream border border-ink/10">
             <span className="text-ink-soft block text-[9px]">MANA CONSUMPTION</span>
             <span className="text-blue-700 font-bold">{feature.manaCost}</span>

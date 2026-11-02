@@ -1,11 +1,12 @@
 import { Stat } from "@/types";
 
 export const bossData = {
-  name: "The Boss",
+  name: "Nirupam Sir",
+  firstName: "Nirupam",
   title: "THE BOSS OF ONE OF A KIND.",
-  subheadline: "Introducing the ultimate-level boss. The man. The myth. The legend.",
+  subheadline: "Introducing the ultimate-level boss, Nirupam. The man. The myth. The legend.",
   company: "Contentify",
-  portrait: "/images/boss/boss-portrait.jpg",
+  portrait: "/images/boss/nirupam.png",
   characterClass: "SUPREME ARCHITECT · S-TIER LEADER",
   level: 99,
   rarity: "MYTHIC ★★★★★★",
@@ -82,7 +83,7 @@ export const bossData = {
   ],
   appreciationClosing:
     "Thank you for being the kind of leader who doesn't just build a better team, but helps build better people.",
-  finaleHeadline: "HAPPY BIRTHDAY, BOSS!",
+  finaleHeadline: "HAPPY BIRTHDAY, NIRUPAM SIR!",
   finaleTagline: "THE ORIGINAL. THE ICON. THE ONE OF ONE.",
   finaleCopy:
     "From your favourite minions at Contentify, with love, laughter and all the trackers we could ever need. ❤️",

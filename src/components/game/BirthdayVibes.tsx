@@ -6,7 +6,18 @@ import React from "react";
 const FLAG_COLORS = ["bg-gold", "bg-blush", "bg-gold-light", "bg-sky"];
 
 /** "HAPPY BIRTHDAY" pennant banner hanging on a curved string. */
-export function BirthdayBunting({ text = "HAPPY BIRTHDAY", className = "" }: { text?: string; className?: string }) {
+export function BirthdayBunting({
+  text = "HAPPY BIRTHDAY",
+  className = "",
+  widthClass = "max-w-2xl",
+  colorOffset = 0,
+}: {
+  text?: string;
+  className?: string;
+  widthClass?: string;
+  /** Shifts the colour cycle so a second strand doesn't mirror the first. */
+  colorOffset?: number;
+}) {
   const chars = [...text];
   const n = chars.length;
   // String is a quadratic curve M0,2 Q50,30 100,2 in a 100x20 viewBox stretched to the banner height.
@@ -14,7 +25,7 @@ export function BirthdayBunting({ text = "HAPPY BIRTHDAY", className = "" }: { t
   const H = 26; // px height of the string's SVG
 
   return (
-    <div className={`relative w-full max-w-2xl mx-auto select-none pointer-events-none ${className}`} aria-label={text} role="img">
+    <div className={`relative w-full ${widthClass} mx-auto select-none pointer-events-none ${className}`} aria-label={text} role="img">
       <svg className="absolute inset-x-0 top-0 w-full" style={{ height: H }} viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden>
         <path d="M0 2 Q50 30 100 2" fill="none" stroke="var(--color-gold-dark)" strokeWidth="0.6" vectorEffect="non-scaling-stroke" />
       </svg>
@@ -33,7 +44,7 @@ export function BirthdayBunting({ text = "HAPPY BIRTHDAY", className = "" }: { t
           return (
             <span key={i} className="relative" style={{ top, transform: `rotate(${tilt}deg)` }}>
               <span
-                className={`bunting-flag block w-[19px] h-[26px] sm:w-8 sm:h-11 ${FLAG_COLORS[i % FLAG_COLORS.length]} shadow-sm`}
+                className={`bunting-flag block w-[19px] h-[26px] sm:w-8 sm:h-11 ${FLAG_COLORS[(i + colorOffset) % FLAG_COLORS.length]} shadow-sm`}
                 style={{ animationDelay: `${(i % 5) * 0.35}s` }}
               >
                 <span className="block pt-[3px] sm:pt-1.5 text-center text-[10px] sm:text-base font-extrabold font-hero text-ink leading-none">
@@ -80,7 +91,7 @@ export function FloatingBalloons({ className = "" }: { className?: string }) {
   );
 }
 
-const RIBBON_ITEMS = ["HAPPY BIRTHDAY, BOSS", "🎂", "LEVEL 99 → 100", "🎉", "THE ONE OF ONE", "🎈", "TRACKER STATUS: CELEBRATING", "🥳"];
+const RIBBON_ITEMS = ["HAPPY BIRTHDAY, NIRUPAM SIR", "🎂", "LEVEL 99 → 100", "🎉", "THE ONE OF ONE", "🎈", "TRACKER STATUS: CELEBRATING", "🥳"];
 
 /** Scrolling "Happy Birthday" ribbon used as a divider between sections. */
 export function BirthdayRibbon({ reverse = false }: { reverse?: boolean }) {
@@ -98,7 +109,7 @@ export function BirthdayRibbon({ reverse = false }: { reverse?: boolean }) {
     <div className="overflow-hidden py-3">
     <div
       className="relative overflow-hidden py-2.5 sm:py-3 bg-gradient-to-r from-gold-light via-gold to-gold-light border-y border-gold-dark/30 -rotate-1 scale-[1.02] shadow-[0_6px_20px_rgba(201,162,77,0.25)]"
-      aria-label="Happy Birthday, Boss!"
+      aria-label="Happy Birthday, Nirupam Sir!"
       role="img"
     >
       <div className={`marquee flex w-max ${reverse ? "marquee-reverse" : ""}`} aria-hidden>

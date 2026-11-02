@@ -26,7 +26,7 @@ export function EasterEggModal({ trigger, className }: EasterEggModalProps = {})
     {
       id: "ROW-02",
       task: "Put this Birthday on a Tracker",
-      owner: "The Boss",
+      owner: "Nirupam Sir",
       formula: "=IF(BOSS_ASKS, 'FORBIDDEN', 'SUCCESS')",
       status: "BLOCKED BY MINIONS",
       priority: "HIGH",

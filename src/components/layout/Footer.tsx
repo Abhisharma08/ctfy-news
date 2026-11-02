@@ -28,7 +28,7 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-2 text-sm text-ink-soft max-w-sm">
-              The Boss of One of a Kind, An internal birthday tribute crafted with boundless admiration, humor, and 0 unupdated rows.
+              An internal birthday tribute to Nirupam Sir, the Boss of One of a Kind, crafted with boundless admiration, humor, and 0 unupdated rows.
             </p>
           </div>
 

@@ -143,6 +143,7 @@ export function CharacterIntro() {
       {/* Birthday bunting */}
       <div className="px-3 sm:px-6 -mt-2 mb-4 sm:mb-6">
         <BirthdayBunting />
+        <BirthdayBunting text="NIRUPAM SIR" widthClass="max-w-[19rem] sm:max-w-lg" colorOffset={2} className="-mt-3 sm:-mt-2" />
       </div>
 
       {/* Main Character Showcase Screen */}
@@ -168,6 +169,13 @@ export function CharacterIntro() {
                 ONE OF A KIND.
               </span>
             </h1>
+
+            {/* Player name plate */}
+            <p className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-mono font-bold tracking-[0.2em] sm:tracking-[0.3em] text-ink uppercase">
+              <span className="hidden sm:block h-px w-12 bg-gold" aria-hidden />
+              Player 1 · <span className="text-gold-deep">{bossData.name}</span>
+              <span className="hidden sm:block h-px w-12 bg-gold" aria-hidden />
+            </p>
 
             {/* Subheadline from Google Doc */}
             <div className="inline-block p-1 px-3 rounded-lg bg-canvas border-l-4 border-gold text-xs sm:text-sm font-mono text-gold-deep">

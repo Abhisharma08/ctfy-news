@@ -158,4 +158,44 @@ export const employeesData: Employee[] = [
     image: "/images/employees/bikram.png",
     birthdayMessage: "Happy Birthday, Pom! Keep rocking and stay the same crazy guy you've always been!",
   },
+  {
+    id: 19,
+    name: "Radhika",
+    designation: "The Other Oldest Minion",
+    image: "/images/employees/radhika.png",
+    birthdayMessage:
+      "Happy Birthday sir!🎉 Wishing you lots of happiness, success, and good health. Thank you for your constant support and guidance. Grateful to learn from you. Hope you have a wonderful year ahead! 😊",
+  },
+  {
+    id: 20,
+    name: "Shubh",
+    designation: "The Other Oldest Minion",
+    image: "/images/employees/shubh.png",
+    birthdayMessage:
+      "Wishing you a very Happy Birthday, Sir! May this year bring you immense happiness, good health, success, and new achievements. Wishing you continued growth and prosperity in everything you do. Have a wonderful year ahead, Sir!",
+  },
+  {
+    id: 21,
+    name: "Abhimanyu",
+    image: "/images/employees/abhimanyu.png",
+    birthdayMessage:
+      "Happy Birthday, Sir! 🎉 Wishing you a fantastic year ahead filled with happiness, good health and lots of success. Have a great day!",
+  },
+  {
+    id: 22,
+    name: "Mukul",
+    designation: "The Prodigal Minion",
+    image: "/images/employees/mukul.jpeg",
+    funnyMessage:
+      'You always say "Focus, Win the Match" & I am at the same way/answer "Jii" "Haa". But you are the one who makes people Man of the Series & we all know you make us the best players of DM.',
+    birthdayMessage: "Wish you a very happy birthday Coach Saabh #Contentify Boss",
+  },
+  {
+    id: 23,
+    name: "Ayaz",
+    designation: "The Other Google Ads Minion",
+    image: "/images/employees/ayaz.png",
+    birthdayMessage:
+      "Happy Birthday, Sir! 🎂 Wishing you a year full of happiness, good health and success. Thank you for your guidance and support. Have a wonderful day!",
+  },
 ];

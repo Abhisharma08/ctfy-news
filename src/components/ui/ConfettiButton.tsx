@@ -50,7 +50,7 @@ export function fireCelebrationConfetti() {
 }
 
 export function ConfettiButton({
-  label = "Celebrate The Boss! 🎂",
+  label = "Celebrate Nirupam Sir! 🎂",
   className = "",
   variant = "primary",
 }: ConfettiButtonProps) {

@@ -35,18 +35,18 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://contentify-tribute.vercel.app"),
-  title: "The Boss of One of a Kind | A Contentify Birthday Tribute",
+  title: "Happy Birthday, Nirupam Sir | The Boss of One of a Kind",
   description:
-    "A special birthday tribute celebrating the legendary leadership, trackers, automation obsession and kindness behind Contentify.",
+    "A special birthday tribute celebrating Nirupam Sir: the legendary leadership, trackers, automation obsession and kindness behind Contentify.",
   robots: {
     index: false,
     follow: false,
     nocache: true,
   },
   openGraph: {
-    title: "The Boss of One of a Kind | A Contentify Birthday Tribute",
+    title: "Happy Birthday, Nirupam Sir | The Boss of One of a Kind",
     description:
-      "A special birthday tribute celebrating the legendary leadership, trackers, automation obsession and kindness behind Contentify.",
+      "A special birthday tribute celebrating Nirupam Sir: the legendary leadership, trackers, automation obsession and kindness behind Contentify.",
     url: "https://contentify.com",
     siteName: "Contentify Tributes",
     images: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "The Boss of One of a Kind - Contentify Birthday Tribute",
+        alt: "Happy Birthday, Nirupam Sir - A Contentify Birthday Tribute",
       },
     ],
     locale: "en_US",
@@ -62,9 +62,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Boss of One of a Kind | A Contentify Birthday Tribute",
+    title: "Happy Birthday, Nirupam Sir | The Boss of One of a Kind",
     description:
-      "A special birthday tribute celebrating the legendary leadership, trackers, automation obsession and kindness behind Contentify.",
+      "A special birthday tribute celebrating Nirupam Sir: the legendary leadership, trackers, automation obsession and kindness behind Contentify.",
     images: ["/og-image.png"],
   },
 };

@@ -77,7 +77,7 @@ export function StartScreen() {
           The Boss of <span className="text-gold-deep">One of a Kind</span>
         </h1>
         <p className="mt-3 text-xs sm:text-sm font-mono text-ink-soft tracking-widest uppercase">
-          Birthday Edition · Player 1: The Boss · LVL 99
+          Birthday Edition · Player 1: Nirupam Sir · LVL 99
         </p>
 
         <div className="mt-8 w-full rounded-2xl border border-gold/30 bg-canvas/80 p-4 text-left">
