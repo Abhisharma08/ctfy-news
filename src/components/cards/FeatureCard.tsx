@@ -122,27 +122,29 @@ export function FeatureCard({ feature }: FeatureCardProps) {
         {/* Embedded Interactive Spreadsheet Simulation for Updated Tracker */}
         {feature.isHighlighted && (
           <div className="my-3.5 p-3 rounded-2xl bg-paper/95 border border-gold/50 font-mono text-[11px] shadow-inner space-y-2">
-            <div className="flex items-center justify-between pb-1.5 border-b border-gold/20 text-gold-deep">
-              <span className="font-bold flex items-center gap-1.5 text-[10px]">
-                <FileSpreadsheet className="w-3.5 h-3.5 text-gold-deep" />
-                UPDATED_TRACKER_KPI_V99.SHEETS
+            <div className="flex flex-wrap items-center justify-between gap-1.5 pb-1.5 border-b border-gold/20 text-gold-deep">
+              <span className="font-bold flex items-center gap-1.5 text-[10px] min-w-0">
+                <FileSpreadsheet className="w-3.5 h-3.5 text-gold-deep shrink-0" />
+                <span>
+                  UPDATED_TRACKER_<wbr />KPI_V99.SHEETS
+                </span>
               </span>
-              <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-700 font-bold text-[9px] border border-emerald-500/30 flex items-center gap-1">
+              <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-700 font-bold text-[9px] border border-emerald-500/30 flex items-center gap-1 whitespace-nowrap">
                 <CheckCircle2 className="w-2.5 h-2.5" />
                 UPDATED (LIVE)
               </span>
             </div>
             <div className="space-y-1.5 text-[10px]">
-              <div className="flex items-center justify-between text-ink bg-ink/5 p-1.5 rounded">
-                <span className="truncate pr-2">1. Birthday Tribute Surprise</span>
+              <div className="flex flex-col items-start gap-0.5 sm:flex-row sm:items-center sm:justify-between text-ink bg-ink/5 p-1.5 rounded">
+                <span className="sm:pr-2">1. Birthday Tribute Surprise</span>
                 <span className="text-emerald-700 font-bold shrink-0">COMPLETED ✅</span>
               </div>
-              <div className="flex items-center justify-between text-ink bg-ink/5 p-1.5 rounded">
-                <span className="truncate pr-2">2. Did You Update The Tracker?</span>
+              <div className="flex flex-col items-start gap-0.5 sm:flex-row sm:items-center sm:justify-between text-ink bg-ink/5 p-1.5 rounded">
+                <span className="sm:pr-2">2. Did You Update The Tracker?</span>
                 <span className="text-gold-deep font-bold shrink-0">ALWAYS UPDATED ⚡</span>
               </div>
-              <div className="flex items-center justify-between text-ink bg-ink/5 p-1.5 rounded">
-                <span className="truncate pr-2">3. Contentify Q4 Ambition Target</span>
+              <div className="flex flex-col items-start gap-0.5 sm:flex-row sm:items-center sm:justify-between text-ink bg-ink/5 p-1.5 rounded">
+                <span className="sm:pr-2">3. Contentify Q4 Ambition Target</span>
                 <span className="text-purple-700 font-bold shrink-0">+200% EXCEEDED 🚀</span>
               </div>
             </div>

@@ -96,14 +96,14 @@ export function CharacterIntro() {
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <span className="text-xs sm:text-sm font-extrabold text-ink font-heading tracking-wide uppercase truncate">
+                <span className="text-xs sm:text-sm font-extrabold text-ink font-heading tracking-wide uppercase whitespace-nowrap shrink-0">
                   {bossData.name}
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-mono px-1.5 py-0.5 rounded bg-gold/20 text-gold-deep font-semibold shrink-0">
+                <span className="text-[9px] sm:text-[10px] font-mono px-1.5 py-0.5 rounded bg-gold/20 text-gold-deep font-semibold min-w-0 truncate">
                   {bossData.rarity}
                 </span>
               </div>
-              <span className="text-[9px] sm:text-[10px] font-mono text-ink-soft block truncate max-w-[140px] xs:max-w-[220px] sm:max-w-none">
+              <span className="text-[9px] sm:text-[10px] font-mono text-ink-soft block leading-tight">
                 {bossData.characterClass}
               </span>
             </div>

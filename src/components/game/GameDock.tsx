@@ -45,7 +45,7 @@ export function GameDock() {
     <div className="fixed bottom-3 inset-x-0 z-40 flex justify-center px-3 pointer-events-none">
       <div className="max-w-lg w-full">
       <XpBar onOpen={() => setLogOpen(true)} />
-      <nav className="pointer-events-auto w-full p-1.5 sm:p-2 rounded-2xl bg-paper/90 border border-gold/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(11,18,32,0.12)] flex items-center justify-between gap-1">
+      <nav className="pointer-events-auto w-full p-1.5 sm:p-2 rounded-2xl bg-paper/90 border border-gold/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(11,18,32,0.12)] flex items-center justify-between gap-0.5 sm:gap-1">
         {dockItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeSection === item.id;
@@ -54,7 +54,7 @@ export function GameDock() {
               key={item.id}
               href={item.href}
               onClick={() => sounds.playBlip()}
-              className={`flex-1 py-1.5 px-1 sm:px-2 rounded-xl flex flex-col items-center justify-center transition-all duration-200 ${
+              className={`flex-1 min-w-0 py-1.5 px-0.5 sm:px-2 rounded-xl flex flex-col items-center justify-center transition-all duration-200 ${
                 isActive
                   ? "bg-gradient-to-t from-gold/20 to-cream text-gold-deep border border-gold/40 shadow-sm scale-105"
                   : "text-ink-soft hover:text-ink hover:bg-ink/5"
