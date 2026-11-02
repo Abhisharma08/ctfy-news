@@ -169,7 +169,7 @@ export const employeesData: Employee[] = [
   {
     id: 20,
     name: "Shubh",
-    designation: "The Other Oldest Minion",
+    designation: "The Minion Outside The Contentify Minion Universe",
     image: "/images/employees/shubh.png",
     birthdayMessage:
       "Wishing you a very Happy Birthday, Sir! May this year bring you immense happiness, good health, success, and new achievements. Wishing you continued growth and prosperity in everything you do. Have a wonderful year ahead, Sir!",
