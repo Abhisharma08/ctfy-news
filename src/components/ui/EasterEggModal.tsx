@@ -4,7 +4,12 @@ import React, { useState } from "react";
 import { X, Table, FileSpreadsheet, Sparkles, CheckCircle2 } from "lucide-react";
 import { fireCelebrationConfetti } from "./ConfettiButton";
 
-export function EasterEggModal() {
+interface EasterEggModalProps {
+  trigger?: (open: () => void) => React.ReactNode;
+  className?: string;
+}
+
+export function EasterEggModal({ trigger, className }: EasterEggModalProps = {}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const trackerRows = [
@@ -42,20 +47,29 @@ export function EasterEggModal() {
     },
   ];
 
+  const handleOpen = () => {
+    setIsOpen(true);
+    fireCelebrationConfetti();
+  };
+
   return (
     <>
-      <button
-        onClick={() => {
-          setIsOpen(true);
-          fireCelebrationConfetti();
-        }}
-        type="button"
-        className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-[#DDB65E] bg-[#111C30] hover:bg-[#1B2A43] border border-[#DDB65E]/30 rounded-md transition-all duration-200 cursor-pointer shadow-sm hover:border-[#DDB65E]"
-        title="Classified: Boss's Secret Tracker"
-      >
-        <FileSpreadsheet className="w-3.5 h-3.5 text-[#DDB65E]" />
-        <span>SECRET_TRACKER.XLSX</span>
-      </button>
+      {trigger ? (
+        trigger(handleOpen)
+      ) : (
+        <button
+          onClick={handleOpen}
+          type="button"
+          className={
+            className ||
+            "inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-[#DDB65E] bg-[#111C30] hover:bg-[#1B2A43] border border-[#DDB65E]/30 rounded-md transition-all duration-200 cursor-pointer shadow-sm hover:border-[#DDB65E]"
+          }
+          title="Classified: Boss's Secret Tracker"
+        >
+          <FileSpreadsheet className="w-3.5 h-3.5 text-[#DDB65E]" />
+          <span>SECRET_TRACKER.XLSX</span>
+        </button>
+      )}
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">

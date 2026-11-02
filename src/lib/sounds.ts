@@ -57,6 +57,15 @@ class SoundManager {
     osc.stop(this.ctx.currentTime + 0.13);
   }
 
+  public toggleMute(): boolean {
+    this.enabled = !this.enabled;
+    return this.enabled;
+  }
+
+  public playFanfare() {
+    this.playVictory();
+  }
+
   public playVictory() {
     if (!this.enabled) return;
     this.initCtx();

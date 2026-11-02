@@ -83,46 +83,46 @@ export function CharacterIntro() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full pt-20 pb-12 sm:pt-28 sm:pb-16 overflow-hidden">
+    <div ref={containerRef} className="relative w-full pt-24 pb-12 sm:pt-32 sm:pb-16 overflow-hidden">
       {/* Top Gaming HUD Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
-        <div className="flex flex-wrap items-center justify-between gap-3 p-3 sm:p-4 rounded-2xl bg-[#111C30]/90 border border-[#DDB65E]/30 backdrop-blur-md shadow-lg">
+        <div className="flex items-center justify-between gap-2 p-2.5 sm:p-4 rounded-2xl bg-[#111C30]/90 border border-[#DDB65E]/30 backdrop-blur-md shadow-lg">
           {/* Left Player Tag */}
-          <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-tr from-[#DDB65E] to-[#F4D992] text-[#0B1220] font-bold font-mono text-xs shadow-md">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-tr from-[#DDB65E] to-[#F4D992] text-[#0B1220] font-bold font-mono text-xs shadow-md shrink-0">
               99
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs sm:text-sm font-extrabold text-[#F5F1E8] font-heading tracking-wide uppercase">
+            <div className="min-w-0">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="text-xs sm:text-sm font-extrabold text-[#F5F1E8] font-heading tracking-wide uppercase truncate">
                   {bossData.name}
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#DDB65E]/20 text-[#DDB65E] font-semibold">
+                <span className="text-[9px] sm:text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#DDB65E]/20 text-[#DDB65E] font-semibold shrink-0">
                   {bossData.rarity}
                 </span>
               </div>
-              <span className="text-[10px] font-mono text-[#A5B0C2]">
+              <span className="text-[9px] sm:text-[10px] font-mono text-[#A5B0C2] block truncate max-w-[140px] xs:max-w-[220px] sm:max-w-none">
                 {bossData.characterClass}
               </span>
             </div>
           </div>
 
           {/* Right Action buttons */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             <button
               onClick={runIntroAnimation}
               type="button"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-[#1B2A43] text-[#DDB65E] border border-[#DDB65E]/30 hover:bg-[#DDB65E] hover:text-[#0B1220] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono bg-[#1B2A43] text-[#DDB65E] border border-[#DDB65E]/30 hover:bg-[#DDB65E] hover:text-[#0B1220] transition-colors cursor-pointer"
               title="Replay Intro Sequence"
             >
               <RefreshCw className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">REPLAY INTRO</span>
+              <span className="hidden sm:inline">REPLAY</span>
             </button>
 
             <button
               onClick={toggleSound}
               type="button"
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono border transition-all cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-mono border transition-all cursor-pointer ${
                 sfxEnabled
                   ? "bg-[#DDB65E]/20 text-[#DDB65E] border-[#DDB65E]"
                   : "bg-[#111C30] text-[#A5B0C2] border-white/10 hover:border-white/20"
@@ -130,7 +130,7 @@ export function CharacterIntro() {
               title="Toggle Game Audio Effects"
             >
               {sfxEnabled ? <Volume2 className="w-3.5 h-3.5 text-[#DDB65E]" /> : <VolumeX className="w-3.5 h-3.5" />}
-              <span>{sfxEnabled ? "SFX: ON" : "SFX: MUTED"}</span>
+              <span className="hidden xs:inline">{sfxEnabled ? "SFX: ON" : "SFX: MUTED"}</span>
             </button>
           </div>
         </div>
