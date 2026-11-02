@@ -19,7 +19,10 @@ export const employeesData: Employee[] = [
     name: "Priya",
     designation: "The SEO Minion",
     image: "/images/employees/priya.png",
-    birthdayMessage: "Happy birthday sir 🌻",
+    funnyMessage:
+      "Working with you is like a Google update: no warning, big impact, and I spend the next week fixing things that I already forgot & still trying to remember. 🤪 Thank you for being patient with this tiny little forgetful human and for always pushing me to learn, grow and do better. Truly appreciate it! ❤️",
+    birthdayMessage:
+      "Happy Birthday to our very own Google Algorithm! May your life always rank #1 in happiness, success and prosperity. May you never face a core update, traffic drop or technical issue in life. Stay awesome, keep rocking and never stop updating! 🤘😎",
   },
   {
     id: 3,
