@@ -66,7 +66,7 @@ export const awardsData: Award[] = [
     id: 6,
     title: "The GOAT of Leadership",
     description:
-      "For inspiring 20 minions to build an entire secret video game just to celebrate your birthday.",
+      "For inspiring a whole team of minions to build an entire secret video game just to celebrate your birthday.",
     iconName: "Crown",
     category: "ALL-TIME LEGEND",
     trophyTier: "Mythic",

@@ -18,7 +18,7 @@ export function EasterEggModal({ trigger, className }: EasterEggModalProps = {})
     {
       id: "ROW-01",
       task: "Surprise Boss with Custom Website",
-      owner: "All 20 Minions",
+      owner: "All The Minions",
       formula: "=CONCAT(LOVE, GRATITUDE, CAKE)",
       status: "COMPLETED",
       priority: "CRITICAL",

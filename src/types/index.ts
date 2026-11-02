@@ -2,8 +2,8 @@ export interface Employee {
   id: number;
   name: string;
   designation?: string;
-  image: string;
-  funnyMessage: string;
+  image?: string;
+  funnyMessage?: string;
   birthdayMessage: string;
   // Game attributes
   role?: "Tactical" | "Creative" | "Ops Vanguard" | "Code Sorcerer" | "Defense";

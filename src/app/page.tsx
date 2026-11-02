@@ -34,7 +34,7 @@ export default function Home() {
       {/* 04. Hall of Fame - Achievements & Trophies */}
       <HallOfFame />
 
-      {/* 05. Party Roster - The 20 Minions Have Entered The Chat */}
+      {/* 05. Party Roster - The Minions Have Entered The Chat */}
       <Minions />
 
       {/* Bonus Stage - Tracker Rush mini-game */}

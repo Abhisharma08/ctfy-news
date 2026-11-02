@@ -50,7 +50,7 @@ export function Navbar() {
     { label: "The Legend", href: "#legend", icon: Shield, badge: "STATS", desc: "Dossier & Combat Stats" },
     { label: "Superpowers", href: "#superpowers", icon: Zap, badge: "FEATURES", desc: "Core Leadership Abilities" },
     { label: "Hall of Fame", href: "#awards", icon: Trophy, badge: "AWARDS", desc: "Achievements Unlocked" },
-    { label: "The Minions", href: "#minions", icon: Users, badge: "20 TEAM", desc: "Party Roster & Wishes" },
+    { label: "The Minions", href: "#minions", icon: Users, badge: "THE TEAM", desc: "Party Roster & Wishes" },
     { label: "Appreciation", href: "#appreciation", icon: Heart, badge: "EPILOGUE", desc: "Behind the System" },
   ];
 
