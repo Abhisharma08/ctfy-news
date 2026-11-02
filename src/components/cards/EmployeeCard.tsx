@@ -90,7 +90,7 @@ export function EmployeeCard({ employee }: EmployeeCardProps) {
             <MessageSquareQuote className="w-3 h-3" />
             <span>FIELD LOG OBSERVATION</span>
           </div>
-          <p className="text-xs text-ink-soft leading-relaxed italic font-sans">&ldquo;{employee.funnyMessage}&rdquo;</p>
+          <p className="text-xs text-ink-soft leading-relaxed italic font-sans whitespace-pre-line">&ldquo;{employee.funnyMessage}&rdquo;</p>
         </div>
       )}
 

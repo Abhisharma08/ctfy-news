@@ -81,6 +81,7 @@ export const employeesData: Employee[] = [
   {
     id: 10,
     name: "Saheba",
+    image: "/images/employees/saheba.png",
     designation: "The Intent Finder Minion",
     funnyMessage:
       "Sir, you manage to stay focused on work even while travelling or sitting in a hospital. If this level of dedication doesn't motivate us, nothing ever will! 😂 You really set the bar too high for the rest of us.",
@@ -114,6 +115,7 @@ export const employeesData: Employee[] = [
   {
     id: 14,
     name: "Neha",
+    image: "/images/employees/neha.png",
     designation: "The Campaign Cracker ",
     birthdayMessage:
       "Happy Birthday, Sir! ❤️\n\nI just want to take a moment to thank you for being more than just a boss. Working with you has taught me a lot, not just about work but also about learning, growing and believing in myself.\n\nI really appreciate how you always push me to try new things, take on challenges and do things that sometimes I don't even think I'm capable of.\n\nYour guidance and encouragement have made a real difference in my journey, and I'm genuinely grateful for everything I've learned from you.",
@@ -125,5 +127,22 @@ export const employeesData: Employee[] = [
     image: "/images/employees/dipankar.png",
     birthdayMessage:
       "Happy Birthday, Sir! You have always supported us, understood us, and stood by us. You have never made us feel like we have a boss, but rather someone we can always look up to, learn from, and count on. Truly grateful to have a mentor like you. Wishing you lots of happiness!",
+  },
+  {
+    id: 16,
+    name: "Suprobha",
+    designation: "The Everything-That-Involves-Meta Minion",
+    image: "/images/employees/suprobha.png",
+    funnyMessage:
+      "Recent learning from Sir: Consistency works.. The only thing is sometimes we quit a lil early.. you have a weapon which you know very deeply. Use that and explore. But it's not easy. It's not quick.",
+    birthdayMessage:
+      "Almost 5 years of having you as a mentor and you're still the idol figure I will always look up to. You've been a teacher, a saviour, and a guardian I never knew I needed. I will always carry your teachings and learnings in my heart. I hope to make you proud one day for sure! Always grateful to have you as our boss!\n\nHappy Birthday Sir!! ❤️",
+  },
+  {
+    id: 17,
+    name: "Shivam",
+    image: "/images/employees/shivam.png",
+    funnyMessage: "Sir काम है या कोयले की खान\nजितना खोदते जा रहे है। उतना ही बढ़ते जा रहा है।।",
+    birthdayMessage: "Happy Birthday Superboss",
   },
 ];
