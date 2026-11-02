@@ -199,4 +199,12 @@ export const employeesData: Employee[] = [
     birthdayMessage:
       "Happy Birthday, Sir! 🎂 Wishing you a year full of happiness, good health and success. Thank you for your guidance and support. Have a wonderful day!",
   },
+  {
+    id: 24,
+    name: "Akash",
+    designation: "The Oldest-Oldest Minion",
+    image: "/images/employees/akash.png",
+    birthdayMessage:
+      "Happy Birthday, Sir! 🥳🎉 Thanks for always being supportive and approachable. Wishing you lots of happiness and success ahead. Have a great day! 😊",
+  },
 ];
