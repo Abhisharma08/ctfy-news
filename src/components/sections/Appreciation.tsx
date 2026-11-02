@@ -1,39 +1,71 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 import { bossData } from "@/data/boss";
 import { Reveal } from "@/components/ui/Reveal";
-import { Heart, Sparkles, Quote } from "lucide-react";
+import { Heart, Sparkles, ScrollText, Crown } from "lucide-react";
+import { sounds } from "@/lib/sounds";
 
 export function Appreciation() {
   return (
     <Section
       id="appreciation"
-      badge="SECTION 05 // HEARTFELT"
-      className="bg-gradient-to-b from-transparent via-[#0F172A]/70 to-transparent"
+      badge="SECTION 05 // STORY CUTSCENE"
+      className="bg-gradient-to-b from-transparent via-[#0B1220]/80 to-transparent"
     >
       <div className="max-w-4xl mx-auto">
         <Reveal direction="up" delay={0.1}>
           <div className="text-center mb-10">
-            <div className="w-12 h-12 mx-auto mb-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
-              <Heart className="w-6 h-6 fill-rose-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-mono font-bold tracking-wider mb-3">
+              <Heart className="w-3.5 h-3.5 fill-rose-400" />
+              <span>MAIN STORY QUEST // UNLOCKED MEMORY</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#F5F1E8] font-heading leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#F5F1E8] font-heading leading-tight">
               {bossData.appreciationHeading}
             </h2>
-            <p className="mt-3 text-sm sm:text-base font-mono text-[#DDB65E] uppercase tracking-wider">
-              A Moment of Genuine Gratitude from the Entire Contentify Family
+            <p className="mt-2 text-xs sm:text-sm font-mono text-[#DDB65E] uppercase tracking-wider">
+              Recorded into Contentify Archives by Unanimous Team Decree
             </p>
           </div>
         </Reveal>
 
+        {/* Cinematic Game Dialogue Box */}
         <Reveal direction="up" delay={0.25}>
-          <div className="relative p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#1B2A43]/80 via-[#111C30] to-[#0B1220] border border-[#DDB65E]/30 shadow-2xl backdrop-blur-xl">
-            {/* Watermark Quote Icon */}
-            <div className="absolute top-6 right-8 text-[#DDB65E]/10 pointer-events-none">
-              <Quote className="w-20 h-20 rotate-180" />
+          <div
+            onClick={() => sounds.playSelect()}
+            className="relative p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-[#1B2A43]/90 via-[#111C30] to-[#070B14] border-2 border-[#DDB65E]/40 shadow-[0_0_50px_rgba(221,182,94,0.2)] backdrop-blur-xl cursor-pointer"
+          >
+            {/* Top Dialogue Header */}
+            <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#DDB65E]/20">
+              <div className="flex items-center gap-3">
+                <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-[#DDB65E]/60 shadow-md shrink-0">
+                  <Image
+                    src={bossData.portrait}
+                    alt="Boss"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div>
+                  <span className="text-[10px] font-mono text-[#DDB65E] tracking-wider uppercase font-bold block">
+                    PARTY TRANSMISSION
+                  </span>
+                  <h4 className="text-base font-extrabold text-[#F5F1E8] font-heading">
+                    The Minions of Contentify
+                  </h4>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#DDB65E]/10 border border-[#DDB65E]/30 text-[10px] font-mono text-[#DDB65E]">
+                <ScrollText className="w-3.5 h-3.5" />
+                <span>EPILOGUE</span>
+              </div>
             </div>
 
-            <div className="space-y-6 text-[#F5F1E8] text-base sm:text-lg leading-relaxed font-sans relative z-10">
+            {/* Dialogue Narrative */}
+            <div className="space-y-5 text-[#F5F1E8] text-sm sm:text-base leading-relaxed font-sans relative z-10">
               {bossData.appreciationParagraphs.map((para, idx) => (
                 <p key={idx} className="text-[#F5F1E8]/90">
                   {para}
@@ -41,14 +73,14 @@ export function Appreciation() {
               ))}
             </div>
 
-            {/* Climax Closing Quote Callout */}
-            <div className="mt-10 pt-8 border-t border-[#DDB65E]/20 text-center">
+            {/* Core Truth Callout Box */}
+            <div className="mt-8 pt-6 border-t border-[#DDB65E]/20 text-center">
               <div className="inline-flex items-center gap-2 mb-3 text-xs font-mono text-[#DDB65E] tracking-widest uppercase">
-                <Sparkles className="w-4 h-4" />
-                <span>The Core Truth</span>
-                <Sparkles className="w-4 h-4" />
+                <Crown className="w-4 h-4" />
+                <span>CORE LEADERSHIP PHILOSOPHY</span>
+                <Crown className="w-4 h-4" />
               </div>
-              <blockquote className="text-xl sm:text-2xl font-bold font-hero text-transparent bg-clip-text bg-gradient-to-r from-[#DDB65E] via-[#F4D992] to-[#DDB65E] italic leading-snug">
+              <blockquote className="text-lg sm:text-2xl font-bold font-hero text-transparent bg-clip-text bg-gradient-to-r from-[#DDB65E] via-[#F4D992] to-[#DDB65E] italic leading-snug">
                 &ldquo;{bossData.appreciationClosing}&rdquo;
               </blockquote>
             </div>

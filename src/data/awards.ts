@@ -8,6 +8,9 @@ export const awardsData: Award[] = [
       "For creating more spreadsheets, dashboards, and status columns than the world has problems.",
     iconName: "FileSpreadsheet",
     category: "OPERATIONAL DISCIPLINE",
+    trophyTier: "Platinum",
+    rarity: "0.01% of all bosses",
+    xpReward: "+50,000 XP",
   },
   {
     id: 2,
@@ -16,6 +19,9 @@ export const awardsData: Award[] = [
       "For making manual repetitive work question its very existence across every single department.",
     iconName: "Bot",
     category: "TECH INGENUITY",
+    trophyTier: "Mythic",
+    rarity: "0.05% of all bosses",
+    xpReward: "+45,000 XP",
   },
   {
     id: 3,
@@ -24,6 +30,9 @@ export const awardsData: Award[] = [
       "For never letting a deadline or target slip past unchecked, with relentless tactical focus.",
     iconName: "Target",
     category: "GOAL MASTERY",
+    trophyTier: "Platinum",
+    rarity: "0.02% of all bosses",
+    xpReward: "+60,000 XP",
   },
   {
     id: 4,
@@ -32,6 +41,9 @@ export const awardsData: Award[] = [
       "For single-handedly disarming 5-alarm client escalations and saving the day before lunch.",
     iconName: "Shield",
     category: "FRONTLINE VALOR",
+    trophyTier: "Mythic",
+    rarity: "0.01% of all bosses",
+    xpReward: "+75,000 XP",
   },
   {
     id: 5,
@@ -40,13 +52,19 @@ export const awardsData: Award[] = [
       "For choosing mentorship over penalties, believing in raw potential, and never giving up on anyone.",
     iconName: "Award",
     category: "HEART OF GOLD",
+    trophyTier: "Platinum",
+    rarity: "ONE OF ONE (UNIQUE)",
+    xpReward: "+100,000 XP",
   },
   {
     id: 6,
     title: "The GOAT of Leadership",
     description:
-      "For inspiring 20 minions to build an entire secret website just to celebrate your birthday.",
+      "For inspiring 20 minions to build an entire secret video game just to celebrate your birthday.",
     iconName: "Crown",
     category: "ALL-TIME LEGEND",
+    trophyTier: "Mythic",
+    rarity: "UNPRECEDENTED",
+    xpReward: "+999,999 XP",
   },
 ];

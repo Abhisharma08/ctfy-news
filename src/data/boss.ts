@@ -6,6 +6,10 @@ export const bossData = {
   subtitle: "Not your regular boss. The ultimate-level boss.",
   company: "Contentify",
   portrait: "/images/boss/boss-portrait.jpg",
+  characterClass: "SUPREME ARCHITECT · S-TIER LEADER",
+  level: 99,
+  rarity: "MYTHIC ★★★★★★",
+  guild: "GUILD OF CONTENTIFY",
   heroCopy:
     "Introducing the man, the myth, the legend. A rare combination of charisma, kindness, leadership, unlimited second chances, and an extraordinary ability to turn absolutely anything into a tracker.",
   personalityLabels: [
@@ -21,31 +25,39 @@ export const bossData = {
   stats: [
     {
       id: 1,
-      label: "Patience levels",
+      label: "PATIENCE [HP]",
       value: "∞",
       note: "Tested daily by last-minute client requests and still unshakable",
       iconName: "Infinity",
+      meterPercentage: 100,
+      meterColor: "from-emerald-400 to-teal-500",
     },
     {
       id: 2,
-      label: "Team support",
+      label: "TEAM SHIELD [DEF]",
       value: "100%",
       note: "Always shields the team and takes the heat when fires break out",
       iconName: "ShieldCheck",
+      meterPercentage: 100,
+      meterColor: "from-blue-400 to-indigo-500",
     },
     {
       id: 3,
-      label: "Second chances",
+      label: "SECOND CHANCES [REVIVE]",
       value: "Unlimited",
       note: "Believes people are worth way more than accidental bugs or misses",
       iconName: "Sparkles",
+      meterPercentage: 100,
+      meterColor: "from-amber-400 to-[#DDB65E]",
     },
     {
       id: 4,
-      label: "Main character energy",
+      label: "MAIN CHARACTER ENERGY [AURA]",
       value: "MAX",
       note: "Enters the room and immediately elevates the standard and the vibe",
       iconName: "Flame",
+      meterPercentage: 100,
+      meterColor: "from-rose-500 to-orange-500",
     },
   ] as Stat[],
   appreciationHeading:
@@ -57,7 +69,7 @@ export const bossData = {
   ],
   appreciationClosing:
     "Thank you for being the kind of leader who doesn't just build a better team, but helps build better people.",
-  finaleHeadline: "HAPPY BIRTHDAY, BOSS!",
+  finaleHeadline: "VICTORY ACHIEVED! HAPPY BIRTHDAY, BOSS!",
   finaleTagline: "THE ORIGINAL. THE ICON. THE ONE OF ONE.",
   finaleCopy:
     "From your favourite minions at Contentify, with love, laughter and all the trackers we could ever need. ❤️",

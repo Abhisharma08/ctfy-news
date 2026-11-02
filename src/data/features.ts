@@ -11,6 +11,10 @@ export const featuresData: Feature[] = [
     superpower: "Detects an unupdated row in a spreadsheet from across the room.",
     badge: "SURVEILLANCE MODE",
     iconName: "TableCells",
+    skillType: "Passive",
+    manaCost: "0 MP (Always Active)",
+    cooldown: "Instant",
+    powerLevel: 99,
   },
   {
     id: 2,
@@ -22,6 +26,10 @@ export const featuresData: Feature[] = [
     superpower: "Sees automation opportunities even in the office coffee machine.",
     badge: "100% HANDS-FREE",
     iconName: "Cpu",
+    skillType: "Active",
+    manaCost: "50 MP",
+    cooldown: "0.2s (Infinite Loop)",
+    powerLevel: 98,
   },
   {
     id: 3,
@@ -33,6 +41,10 @@ export const featuresData: Feature[] = [
     superpower: "Turns casual coffee chatter into high-yield quarterly milestones.",
     badge: "KPI SNIPER",
     iconName: "Crosshair",
+    skillType: "Ultimate",
+    manaCost: "100 MP",
+    cooldown: "Quarterly Reset",
+    powerLevel: 100,
   },
   {
     id: 4,
@@ -44,6 +56,10 @@ export const featuresData: Feature[] = [
     superpower: "Absorbs client panic waves and converts them into closed renewals.",
     badge: "TEAM SHIELD",
     iconName: "ShieldAlert",
+    skillType: "Defense",
+    manaCost: "75 MP",
+    cooldown: "24/7 Readiness",
+    powerLevel: 99,
   },
   {
     id: 5,
@@ -55,5 +71,9 @@ export const featuresData: Feature[] = [
     superpower: "Transforms rookie errors into masterclasses and lifelong loyalty.",
     badge: "UNLIMITED LIVES",
     iconName: "HeartHandshake",
+    skillType: "Aura",
+    manaCost: "0 MP (Heart of Gold)",
+    cooldown: "Infinite Charges",
+    powerLevel: 100,
   },
 ];

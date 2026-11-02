@@ -5,6 +5,10 @@ export interface Employee {
   image: string;
   funnyMessage: string;
   birthdayMessage: string;
+  // Game attributes
+  role?: "Tactical" | "Creative" | "Ops Vanguard" | "Code Sorcerer" | "Defense";
+  level?: number;
+  specialSkill?: string;
 }
 
 export interface Feature {
@@ -16,6 +20,11 @@ export interface Feature {
   superpower: string;
   badge: string;
   iconName: string;
+  // RPG Skill attributes
+  skillType?: "Ultimate" | "Passive" | "Active" | "Defense" | "Aura";
+  manaCost?: string;
+  cooldown?: string;
+  powerLevel?: number;
 }
 
 export interface Award {
@@ -24,6 +33,10 @@ export interface Award {
   description: string;
   iconName: string;
   category?: string;
+  // Trophy attributes
+  trophyTier?: "Platinum" | "Mythic" | "Gold";
+  rarity?: string;
+  xpReward?: string;
 }
 
 export interface Stat {
@@ -32,4 +45,6 @@ export interface Stat {
   value: string;
   note: string;
   iconName: string;
+  meterPercentage?: number;
+  meterColor?: string;
 }

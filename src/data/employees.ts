@@ -6,6 +6,9 @@ export const employeesData: Employee[] = [
     name: "Ananya Sharma",
     designation: "The Tracker Survivor",
     image: "/images/employees/employee-01.jpg",
+    role: "Creative",
+    level: 42,
+    specialSkill: "Pixel Perfect Hex Alchemist",
     funnyMessage:
       "I once tried submitting a design without updating the color-coded status cell. He called me 47 seconds later asking if the hex code in row 14 was finalized.",
     birthdayMessage:
@@ -16,6 +19,9 @@ export const employeesData: Employee[] = [
     name: "Rohan Varma",
     designation: "Chief Automation Accomplice",
     image: "/images/employees/employee-02.jpg",
+    role: "Code Sorcerer",
+    level: 45,
+    specialSkill: "Infinite Webhook Summoner",
     funnyMessage:
       "We spent 4 hours building a Zapier trigger to automate a 30-second email. 10/10 would automate again with you.",
     birthdayMessage:
@@ -26,6 +32,9 @@ export const employeesData: Employee[] = [
     name: "Priya Nair",
     designation: "Minister of Client Defense",
     image: "/images/employees/employee-03.jpg",
+    role: "Defense",
+    level: 44,
+    specialSkill: "Crisis Disarming Aura",
     funnyMessage:
       "Whenever a client says 'We need to talk', I don't pray—I just loop the Boss into the thread. Crisis dissolved in 3 minutes flat.",
     birthdayMessage:
@@ -36,6 +45,9 @@ export const employeesData: Employee[] = [
     name: "Kabir Mehta",
     designation: "Senior Target Dodger",
     image: "/images/employees/employee-04.jpg",
+    role: "Tactical",
+    level: 41,
+    specialSkill: "Quarterly Pivot Reflexes",
     funnyMessage:
       "I asked him what the weather was like outside, and he somehow answered with a 3-point quarterly target breakdown.",
     birthdayMessage:
@@ -46,6 +58,9 @@ export const employeesData: Employee[] = [
     name: "Sneha Patel",
     designation: "Lead Second Chance Beneficiary",
     image: "/images/employees/employee-05.jpg",
+    role: "Ops Vanguard",
+    level: 43,
+    specialSkill: "Phoenix Resurgence Protocol",
     funnyMessage:
       "Accidentally deleted a staging database in my second month. Instead of yelling, he sat beside me, fixed the backup, and treated me to bubble tea.",
     birthdayMessage:
@@ -56,6 +71,9 @@ export const employeesData: Employee[] = [
     name: "Arjun Reddy",
     designation: "The 8 PM Firefighter",
     image: "/images/employees/employee-06.jpg",
+    role: "Defense",
+    level: 46,
+    specialSkill: "Midnight Rapid Deployment",
     funnyMessage:
       "His Slack status goes from 'Away' to 'Typing...' at 11:42 PM faster than a speed camera. We suspect he's powered by nuclear coffee.",
     birthdayMessage:
@@ -66,6 +84,9 @@ export const employeesData: Employee[] = [
     name: "Kavita Sen",
     designation: "Director of Aesthetic Policing",
     image: "/images/employees/employee-07.jpg",
+    role: "Creative",
+    level: 40,
+    specialSkill: "Dark Mode Harmony Enchantment",
     funnyMessage:
       "He insists that spreadsheets can be visually artistic. Honestly, looking at his dark-mode gradient headers, I'm starting to believe him.",
     birthdayMessage:
@@ -76,6 +97,9 @@ export const employeesData: Employee[] = [
     name: "Devendra Rao",
     designation: "Vibe Officer & Minion #8",
     image: "/images/employees/employee-08.jpg",
+    role: "Tactical",
+    level: 39,
+    specialSkill: "Standup Morale Multiplier",
     funnyMessage:
       "He can turn a stressful Monday morning standup into a stand-up comedy special where everyone leaves fired up to hit their goals.",
     birthdayMessage:
@@ -86,6 +110,9 @@ export const employeesData: Employee[] = [
     name: "Tanvi Kulkarni",
     designation: "Spreadsheet Whisperer",
     image: "/images/employees/employee-09.jpg",
+    role: "Ops Vanguard",
+    level: 44,
+    specialSkill: "Nested VLOOKUP Channeler",
     funnyMessage:
       "I caught him admiring a nested VLOOKUP formula the way normal people admire the Mona Lisa. True dedication.",
     birthdayMessage:
@@ -96,6 +123,9 @@ export const employeesData: Employee[] = [
     name: "Aditya Malhotra",
     designation: "Quarterly Target Optimist",
     image: "/images/employees/employee-10.jpg",
+    role: "Tactical",
+    level: 43,
+    specialSkill: "150% Milestone Unlocker",
     funnyMessage:
       "When we hit 100% of our targets, his smile is bright. When we hit 120%, he shows us the secret 150% tracker.",
     birthdayMessage:
@@ -106,6 +136,9 @@ export const employeesData: Employee[] = [
     name: "Meera Joshi",
     designation: "Head of Emergency Snacks",
     image: "/images/employees/employee-11.jpg",
+    role: "Defense",
+    level: 38,
+    specialSkill: "Energy Regeneration Feast",
     funnyMessage:
       "If you look closely during all-hands meetings, you can see his brain running 4 parallel automation scripts in real-time.",
     birthdayMessage:
@@ -116,6 +149,9 @@ export const employeesData: Employee[] = [
     name: "Vikram Singhania",
     designation: "The Pitch Deck Warrior",
     image: "/images/employees/employee-12.jpg",
+    role: "Tactical",
+    level: 45,
+    specialSkill: "AI Orchestration Slide Strike",
     funnyMessage:
       "He has never met a slide deck that couldn't be improved by adding 'AI-Powered Orchestration' in the subtitle.",
     birthdayMessage:
@@ -126,6 +162,9 @@ export const employeesData: Employee[] = [
     name: "Rhea Fernandes",
     designation: "Keeper of the Content Schedule",
     image: "/images/employees/employee-13.jpg",
+    role: "Creative",
+    level: 42,
+    specialSkill: "Calendar Time Manipulation",
     funnyMessage:
       "If you miss a tracker deadline, he won't be mad—he'll just stare at you with the profound disappointment of a mentor whose apprentice forgot the sacred texts.",
     birthdayMessage:
@@ -136,6 +175,9 @@ export const employeesData: Employee[] = [
     name: "Nikhil Deshmukh",
     designation: "Junior Bug Creator & Fixer",
     image: "/images/employees/employee-14.jpg",
+    role: "Code Sorcerer",
+    level: 36,
+    specialSkill: "Uber Commute Scripting",
     funnyMessage:
       "Every time I think I've written the ultimate script, he opens his laptop and does it in 3 lines using a webhook he built on his phone in an Uber.",
     birthdayMessage:
@@ -146,6 +188,9 @@ export const employeesData: Employee[] = [
     name: "Ayesha Khan",
     designation: "Storyboarding Specialist",
     image: "/images/employees/employee-15.jpg",
+    role: "Creative",
+    level: 41,
+    specialSkill: "1-Pixel Precision Sight",
     funnyMessage:
       "His attention to detail is so high that he spotted a 1px misalignment on a banner while viewing it on a moving train.",
     birthdayMessage:
@@ -156,6 +201,9 @@ export const employeesData: Employee[] = [
     name: "Siddharth Bose",
     designation: "Chief Metric Analyst",
     image: "/images/employees/employee-16.jpg",
+    role: "Ops Vanguard",
+    level: 44,
+    specialSkill: "Infinite Caffeine Converter",
     funnyMessage:
       "I tried to calculate his daily coffee-to-productivity ratio and the equation broke my graphing calculator.",
     birthdayMessage:
@@ -166,6 +214,9 @@ export const employeesData: Employee[] = [
     name: "Pooja Hegde",
     designation: "Social Media Ninja",
     image: "/images/employees/employee-17.jpg",
+    role: "Creative",
+    level: 39,
+    specialSkill: "2 AM Virality Radar",
     funnyMessage:
       "He claims he doesn't check social media analytics on weekends, but we all know who the 2 AM viewer in our insights dashboard is.",
     birthdayMessage:
@@ -176,6 +227,9 @@ export const employeesData: Employee[] = [
     name: "Gautam Iyer",
     designation: "Senior Workflow Alchemist",
     image: "/images/employees/employee-18.jpg",
+    role: "Ops Vanguard",
+    level: 45,
+    specialSkill: "90-Day Notion Destiny Matrix",
     funnyMessage:
       "If you ask him for advice on personal life, somehow you'll end up with a Notion template and a 90-day habit roadmap.",
     birthdayMessage:
@@ -186,6 +240,9 @@ export const employeesData: Employee[] = [
     name: "Divya Nambiar",
     designation: "The Deadline Enforcer",
     image: "/images/employees/employee-19.jpg",
+    role: "Tactical",
+    level: 43,
+    specialSkill: "Row 38 Stare of Anticipation",
     funnyMessage:
       "He says 'Take your time, no rush at all' while his cursor is hovering excitedly over row 38 awaiting the deliverable.",
     birthdayMessage:
@@ -196,6 +253,9 @@ export const employeesData: Employee[] = [
     name: "Karan Chawla",
     designation: "The Grand Finale Minion",
     image: "/images/employees/employee-20.jpg",
+    role: "Code Sorcerer",
+    level: 47,
+    specialSkill: "Secret Tribute Engine Bootstrapper",
     funnyMessage:
       "We built an entire secret website behind your back just to show you how much we appreciate you. Please don't review the code quality!",
     birthdayMessage:
