@@ -76,7 +76,7 @@ export const employeesData: Employee[] = [
   {
     id: 9,
     name: "Gautam",
-    designation: "The New Minion",
+    designation: "The silent Techy Minion",
     image: "/images/employees/gautam.png",
     birthdayMessage:
       "Happy Birthday, Sir!\n\nHope your year is filled with success, happiness, and lots of great moments.\n\nThank you for always guiding us and helping us understand that there's always a smarter way to get things done.",
