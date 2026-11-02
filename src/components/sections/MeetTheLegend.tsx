@@ -10,7 +10,7 @@ export function MeetTheLegend() {
   return (
     <Section
       id="legend"
-      badge="SECTION 02 // DETAILS & STATS"
+      badge="DETAILS & STATS"
       title={bossData.legendHeading}
       subtitle={bossData.legendSubheadline}
     >

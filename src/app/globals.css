@@ -17,6 +17,10 @@
   --color-gold-dark: #A8822E;  /* gradient ends */
   --color-gold-deep: #8A6620;  /* gold TEXT on white (5.2:1, passes WCAG AA) */
 
+  /* Celebration accents: balloons & bunting only, never text */
+  --color-blush: #F3C4CE;
+  --color-sky: #C9E0F4;
+
   --font-hero: var(--font-playfair), Georgia, serif;
   --font-heading: var(--font-manrope), sans-serif;
   --font-body: var(--font-inter), sans-serif;
@@ -109,4 +113,49 @@ body {
 /* Alternate paper / canvas backgrounds so sections read as distinct "levels" */
 main > section:nth-of-type(even) {
   background-color: var(--color-canvas);
+}
+
+/* ================= Birthday vibes ================= */
+@keyframes balloon-rise {
+  0%   { transform: translateY(110%); opacity: 0; }
+  8%   { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(-115vh); opacity: 0; }
+}
+@keyframes balloon-sway {
+  0%, 100% { transform: rotate(-4deg); }
+  50%      { transform: rotate(4deg); }
+}
+@keyframes flag-sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.balloon {
+  transform: translateY(110%);
+  animation: balloon-rise linear infinite both;
+}
+.balloon-sway {
+  transform-origin: 50% 0%;
+  animation: balloon-sway ease-in-out infinite;
+}
+.bunting-flag {
+  clip-path: polygon(0 0, 100% 0, 100% 68%, 50% 100%, 0 68%);
+  transform-origin: 50% 0%;
+  animation: flag-sway 3.2s ease-in-out infinite;
+}
+.marquee {
+  animation: marquee 32s linear infinite;
+}
+.marquee-reverse {
+  animation-direction: reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .balloons { display: none; }
+  .bunting-flag, .marquee { animation: none; }
 }

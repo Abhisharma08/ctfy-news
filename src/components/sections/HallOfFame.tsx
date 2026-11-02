@@ -10,7 +10,7 @@ export function HallOfFame() {
   return (
     <Section
       id="awards"
-      badge="SECTION 04 // ACHIEVEMENTS UNLOCKED"
+      badge="ACHIEVEMENTS UNLOCKED"
       title={awardsHeadline}
       subtitle={awardsSubheadline}
     >

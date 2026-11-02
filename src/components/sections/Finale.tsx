@@ -10,6 +10,7 @@ import { Sparkles, Crown, Heart, Trophy } from "lucide-react";
 import { sounds } from "@/lib/sounds";
 import { useGame } from "@/lib/game";
 import { BirthdayCake } from "@/components/game/BirthdayCake";
+import { FloatingBalloons } from "@/components/game/BirthdayVibes";
 
 export function Finale() {
   const { complete } = useGame();
@@ -22,9 +23,10 @@ export function Finale() {
   return (
     <Section
       id="finale"
-      badge="SECTION 07 // VICTORY CUTSCENE"
-      className="pb-32 pt-16 md:pt-20"
+      badge="VICTORY CUTSCENE"
+      className="pb-32 pt-16 md:pt-20 isolate"
     >
+      <FloatingBalloons />
       <div className="max-w-4xl mx-auto text-center">
         <Reveal direction="up" delay={0.1}>
           <div className="relative p-8 sm:p-14 rounded-[36px] bg-gradient-to-b from-cream via-canvas to-paper border-2 border-gold/50 shadow-[0_0_90px_rgba(201,162,77,0.3)] overflow-hidden">
@@ -61,11 +63,6 @@ export function Finale() {
             <p className="text-base sm:text-xl text-ink font-heading font-medium max-w-2xl mx-auto leading-relaxed">
               {bossData.finaleCopy}
             </p>
-
-            {/* Humorous punchline */}
-            <div className="mt-5 inline-block px-5 py-2.5 rounded-full bg-paper/80 border border-gold/30 text-xs sm:text-sm font-mono text-gold-deep">
-              {bossData.finalePunchline}
-            </div>
 
             {/* Celebration Buttons */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

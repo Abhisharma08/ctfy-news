@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Crown, Volume2, VolumeX } from "lucide-react";
 import { sounds } from "@/lib/sounds";
 import { useGame, QUESTS } from "@/lib/game";
+import { fireCelebrationConfetti } from "@/components/ui/ConfettiButton";
 
 /** Arcade-style title screen shown on every visit. Pressing start unlocks audio (needs a user gesture). */
 export function StartScreen() {
@@ -21,6 +22,7 @@ export function StartScreen() {
       complete("press_start");
       window.scrollTo({ top: 0 });
       window.dispatchEvent(new Event("game:start"));
+      fireCelebrationConfetti();
     }, 450);
   };
 

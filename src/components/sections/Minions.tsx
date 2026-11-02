@@ -14,7 +14,7 @@ export function Minions() {
   return (
     <Section
       id="minions"
-      badge="SECTION 05 // PARTY ROSTER"
+      badge="PARTY ROSTER"
       title="THE MINIONS HAVE ENTERED THE CHAT."
       subtitle={`${count} minions. One legendary boss. Countless tracker updates. And a whole lot of appreciation.`}
     >

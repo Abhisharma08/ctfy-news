@@ -23,7 +23,7 @@ export function BirthdayCake() {
     sounds.playPuff();
     if (next.every((l) => !l)) {
       window.setTimeout(() => {
-        sounds.playVictory();
+        sounds.playHappyBirthday();
         fireCelebrationConfetti();
         complete("candles");
       }, 300);

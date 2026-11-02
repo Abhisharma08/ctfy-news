@@ -9,7 +9,7 @@ export function Superpowers() {
   return (
     <Section
       id="superpowers"
-      badge="SECTION 03 // THE BOSS EDITION"
+      badge="THE BOSS EDITION"
       title={featuresHeadline}
       subtitle={featuresSubheadline}
     >

@@ -86,5 +86,4 @@ export const bossData = {
   finaleTagline: "THE ORIGINAL. THE ICON. THE ONE OF ONE.",
   finaleCopy:
     "From your favourite minions at Contentify, with love, laughter and all the trackers we could ever need. ❤️",
-  finalePunchline: "P.S. Please don't ask us to put this birthday surprise on a tracker.",
 };

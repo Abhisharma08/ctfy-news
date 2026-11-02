@@ -7,6 +7,7 @@ import { Crown, Sparkles, Volume2, VolumeX, Shield, Zap, Flame, RefreshCw } from
 import { bossData } from "@/data/boss";
 import { sounds, useSoundEnabled } from "@/lib/sounds";
 import { fireCelebrationConfetti } from "@/components/ui/ConfettiButton";
+import { BirthdayBunting, FloatingBalloons } from "@/components/game/BirthdayVibes";
 
 export function CharacterIntro() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -85,7 +86,8 @@ export function CharacterIntro() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full pt-24 pb-12 sm:pt-32 sm:pb-16 overflow-hidden">
+    <div ref={containerRef} className="relative isolate w-full pt-24 pb-12 sm:pt-32 sm:pb-16 overflow-hidden">
+      <FloatingBalloons />
       {/* Top Gaming HUD Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
         <div className="flex items-center justify-between gap-2 p-2.5 sm:p-4 rounded-2xl bg-canvas/90 border border-gold/30 backdrop-blur-md shadow-lg">
@@ -136,6 +138,11 @@ export function CharacterIntro() {
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Birthday bunting */}
+      <div className="px-3 sm:px-6 -mt-2 mb-4 sm:mb-6">
+        <BirthdayBunting />
       </div>
 
       {/* Main Character Showcase Screen */}
@@ -239,8 +246,6 @@ export function CharacterIntro() {
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-paper/20 to-paper/90 pointer-events-none" />
-
                 <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1 rounded-lg bg-paper/80 border border-gold/40 backdrop-blur-md">
                   <Crown className="w-3.5 h-3.5 text-gold-deep" />
                   <span className="text-[10px] font-mono font-bold text-gold-deep">
@@ -252,38 +257,6 @@ export function CharacterIntro() {
                   LVL 99
                 </div>
 
-                {/* Bottom Character Stats Badge */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-paper/90 border border-gold/40 backdrop-blur-md shadow-xl">
-                  <div className="flex items-center justify-between mb-2">
-                    <div>
-                      <span className="text-[10px] font-mono text-gold-deep tracking-wider uppercase font-bold block">
-                        SUPREME ARCHITECT
-                      </span>
-                      <h3 className="text-xl font-extrabold text-ink font-heading">
-                        {bossData.name}
-                      </h3>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-[10px] font-mono text-ink-soft block">PWR LEVEL</span>
-                      <span className="text-sm font-mono font-extrabold text-emerald-700">OVER 9000</span>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-1 pt-2 border-t border-ink/15 text-center text-[10px] font-mono">
-                    <div className="p-1 rounded bg-ink/5">
-                      <span className="text-ink-soft block text-[9px]">PATIENCE</span>
-                      <span className="text-gold-deep font-bold">∞</span>
-                    </div>
-                    <div className="p-1 rounded bg-ink/5">
-                      <span className="text-ink-soft block text-[9px]">SHIELD</span>
-                      <span className="text-blue-700 font-bold">100%</span>
-                    </div>
-                    <div className="p-1 rounded bg-ink/5">
-                      <span className="text-ink-soft block text-[9px]">REVIVES</span>
-                      <span className="text-emerald-700 font-bold">UNLIMITED</span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 

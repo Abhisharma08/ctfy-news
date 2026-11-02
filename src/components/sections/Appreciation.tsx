@@ -12,7 +12,7 @@ export function Appreciation() {
   return (
     <Section
       id="appreciation"
-      badge="SECTION 06 // STORY EPILOGUE"
+      badge="STORY EPILOGUE"
       className="bg-gradient-to-b from-transparent via-paper/80 to-transparent"
     >
       <div className="max-w-4xl mx-auto">

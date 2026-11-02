@@ -58,6 +58,28 @@ class SoundManager {
     this.tone(500, 0, 0.2, "triangle", 0.06, 120);
   }
 
+  /** "Happy Birthday to You" (public domain melody), music-box style */
+  public playHappyBirthday() {
+    if (!this.enabled) return;
+    this.initCtx();
+    const G4 = 392, A4 = 440, B4 = 493.88, C5 = 523.25, D5 = 587.33, E5 = 659.25, F5 = 698.46, G5 = 783.99;
+    const beat = 0.36;
+    // [frequency, beats]
+    const tune: [number, number][] = [
+      [G4, 0.75], [G4, 0.25], [A4, 1], [G4, 1], [C5, 1], [B4, 2],
+      [G4, 0.75], [G4, 0.25], [A4, 1], [G4, 1], [D5, 1], [C5, 2],
+      [G4, 0.75], [G4, 0.25], [G5, 1], [E5, 1], [C5, 1], [B4, 1], [A4, 2],
+      [F5, 0.75], [F5, 0.25], [E5, 1], [C5, 1], [D5, 1], [C5, 3],
+    ];
+    let t = 0.05;
+    for (const [freq, beats] of tune) {
+      const dur = beats * beat;
+      this.tone(freq, t, Math.min(dur * 1.4, 1.2), "triangle", 0.08);
+      this.tone(freq * 2, t, Math.min(dur, 0.5), "sine", 0.02);
+      t += dur;
+    }
+  }
+
   /** Rising arpeggio for "Achievement Unlocked" */
   public playAchievement() {
     if (!this.enabled) return;

@@ -53,12 +53,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Credits & Punchline */}
-        <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-center md:text-left">
+        <div className="mt-8 flex items-center justify-center text-xs font-mono text-center">
           <p className="flex items-center justify-center gap-1 text-ink">
             Crafted with <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" /> by the Minions at Contentify.
-          </p>
-          <p className="text-gold-deep/90 italic">
-            “P.S. Please don&apos;t ask us to put this birthday surprise on a tracker.”
           </p>
         </div>
       </div>

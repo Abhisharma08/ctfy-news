@@ -11,6 +11,7 @@ import { GameDock } from "@/components/game/GameDock";
 import { GameProvider } from "@/lib/game";
 import { StartScreen } from "@/components/game/StartScreen";
 import { TrackerRush } from "@/components/sections/TrackerRush";
+import { BirthdayRibbon } from "@/components/game/BirthdayVibes";
 
 export default function Home() {
   return (
@@ -24,6 +25,8 @@ export default function Home() {
 
       {/* 01. Character Intro & Profile */}
       <Hero />
+
+      <BirthdayRibbon />
 
       {/* 02. Meet the Legend (Dossier & Combat Stats) */}
       <MeetTheLegend />
@@ -42,6 +45,8 @@ export default function Home() {
 
       {/* 06. Story Epilogue - Behind The System Is A Human We Admire */}
       <Appreciation />
+
+      <BirthdayRibbon reverse />
 
       {/* 07. Grand Victory Finale */}
       <Finale />
