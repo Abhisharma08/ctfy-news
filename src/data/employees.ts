@@ -68,7 +68,7 @@ export const employeesData: Employee[] = [
     designation: "The Brother in Arms",
     image: "/images/employees/pradeep.png",
     birthdayMessage:
-      "Almost two decades of friendship, chai-sutta breaks, late-night parties, crazy trips, ups and downs, and countless memories that only we know!\n\nFrom being colleagues to watching you build your own company, it's been one hell of a journey, Pom!\n\nProud of you, brother. Here's to more success, more madness, and many more memories together.\n\nHappy Birthday, Pom! Keep rocking and stay the same crazy guy you've always been!",
+      "Almost two decades of friendship, chai-sutta breaks, late-night parties, crazy trips, ups and downs, and countless memories that only we know!\n\nFrom being colleagues to watching you build your own company, it's been one hell of a journey, Pom!\n\nProud of you, brother. Here's to more success, more madness, and many more memories together",
   },
   {
     id: 9,
@@ -99,6 +99,8 @@ export const employeesData: Employee[] = [
   {
     id: 12,
     name: "Charu",
+    designation: "The Techy Minion",
+    image: "/images/employees/charu.png",
     birthdayMessage:
       "Happy Birthday, Nirupam Sir 🎂\n\nWishing you a year full of happiness, success, and fewer Monday blues. May your coffee be strong, your meetings be short, and your birthday cake be extra large.",
   },
@@ -141,6 +143,7 @@ export const employeesData: Employee[] = [
   {
     id: 17,
     name: "Shivam",
+    designation: "The Oldest Minion",
     image: "/images/employees/shivam.png",
     funnyMessage: "Sir काम है या कोयले की खान\nजितना खोदते जा रहे है। उतना ही बढ़ते जा रहा है।।",
     birthdayMessage: "Happy Birthday Superboss",
@@ -149,6 +152,7 @@ export const employeesData: Employee[] = [
     id: 18,
     name: "Bikram Sir",
     designation: "The Childhood Buddy",
+    image: "/images/employees/bikram.png",
     birthdayMessage: "Happy Birthday, Pom! Keep rocking and stay the same crazy guy you've always been!",
   },
 ];
