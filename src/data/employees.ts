@@ -207,4 +207,12 @@ export const employeesData: Employee[] = [
     birthdayMessage:
       "Happy Birthday, Sir! 🥳🎉 Thanks for always being supportive and approachable. Wishing you lots of happiness and success ahead. Have a great day! 😊",
   },
+  {
+    id: 25,
+    name: "Pavni",
+    designation: "The Delicate Minion",
+    image: "/images/employees/pavni.png",
+    birthdayMessage:
+      "Happiest birthday sir❤️\n\nThank you for being such a great mentor that not only in work but you've also mentored everyone in their lives also. I wish that every employee should have a boss like you who'll help them become a better version of themselves.\n\nThank you for everything sir❤️",
+  },
 ];
