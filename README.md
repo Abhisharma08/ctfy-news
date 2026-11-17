@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CTFY News
 
-## Getting Started
+A static Next.js tribute site.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy to Cloudflare Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The app is configured for Next.js static export; it does not need a server or a Pages Functions runtime. `npm run build` generates the deployable site in `out/`. The `wrangler.jsonc` file records the Pages output directory.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To deploy through Cloudflare Pages Git integration:
 
-## Learn More
+1. Create a Pages project and connect this repository.
+2. Set the build command to `npm run build` and the build output directory to `out`.
+3. Use Node.js 20.9 or later for the build environment.
 
-To learn more about Next.js, take a look at the following resources:
+The Next.js image optimizer is disabled because static Pages deployments do not run a Next.js server. Images are served directly by the browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This static deployment does not support Next.js features that require a server runtime, such as request-time rendering or API routes.
